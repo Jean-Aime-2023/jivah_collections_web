@@ -107,11 +107,13 @@ const Home = () => {
         </div>
       ))}
 
-      <ProductClass
-        title="Best Selling"
-        subtitle="Blossom into a New You!"
-        tag="bestselling"
-      />
+      <div className="container mx-auto flex items-center justify-center my-[5rem]">
+        <ProductClass
+          title="Best Selling"
+          subtitle="Blossom into a New You!"
+          tag="bestselling"
+        />
+      </div>
       <div className="container mx-auto flex gap-6 w-fit">
         <div className="w-[36rem] flex items-center justify-between border shadow-md rounded-xl px-10">
           <div>
@@ -193,11 +195,13 @@ const Home = () => {
           </div>
         </div>
 
-        <ProductClass
-          title="Latest Collection"
-          subtitle="Blossom into a New You!"
-          tag="latest"
-        />
+        <div className="container mx-auto flex items-center justify-center my-[5rem]">
+          <ProductClass
+            title="Latest Collection"
+            subtitle="Blossom into a New You!"
+            tag="latest"
+          />
+        </div>
       </div>
     </section>
   );

@@ -8,9 +8,11 @@ import adidas from '@/public/assets/adidaslogo.jpg';
 import chanel from '@/public/assets/chanellogo.jpg';
 import nike from '@/public/assets/nikelogo.jpg';
 import gucci from '@/public/assets/guccilogo.jpg';
-import { FaDivide } from 'react-icons/fa';
-import { FaTruckFast } from 'react-icons/fa6';
-import { AiOutlineFileProtect } from 'react-icons/ai';
+import { FaRegLightbulb } from "react-icons/fa";
+import { IoCheckmarkCircle } from "react-icons/io5";
+import { TbCertificate } from "react-icons/tb";
+import { FaChartLine } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 const service1 = [
   { id: 1, name: 'Fashion Collections' },
@@ -47,20 +49,32 @@ const partners = [
 const features = [
   {
     id: 1,
-    icon: <FaDivide color="#db9744" size={30} />,
-    name: 'Season Sale',
-    rotate: true,
+    icon: <FaRegLightbulb color="#db9744" size={30} />,
+    name: 'Innovative Fashion Solutions',
+    rotate: false,
   },
   {
     id: 2,
-    icon: <FaTruckFast color="#db9744" size={30} />,
-    name: 'Easy Shipping',
+    icon: <FaShoppingCart color="#db9744" size={30} />,
+    name: 'Convenience',
     rotate: false,
   },
   {
     id: 3,
-    icon: <AiOutlineFileProtect color="#db9744" size={30} />,
-    name: 'Money Back Guarantee',
+    icon: <IoCheckmarkCircle color="#db9744" size={30} />,
+    name: 'Quality Assurance',
+    rotate: false,
+  },
+  {
+    id: 4,
+    icon: <TbCertificate color="#db9744" size={30} />,
+    name: 'Customer-Centric Approach',
+    rotate: false,
+  },
+  {
+    id: 5,
+    icon: <FaChartLine color="#db9744" size={30} />,
+    name: 'Reputation',
     rotate: false,
   },
 ];
@@ -134,8 +148,8 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className="container flex items-center justify-center my-[7rem]">
-        <div className="flex flex-wrap justify-between w-fit gap-[10rem]">
+      <div className="container mx-auto flex items-center justify-center my-[7rem]">
+        <div className="flex flex-wrap justify-between items-center w-fit gap-[10rem]">
           {features.map((feature) => (
             <div
               key={feature.id}

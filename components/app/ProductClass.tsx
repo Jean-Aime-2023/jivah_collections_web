@@ -28,7 +28,7 @@ const ProductClass: React.FC<ProductClassProps> = ({ title, subtitle, tag }) => 
   };
 
   return (
-    <div className="container mx-auto flex flex-col gap-6 items-center justify-center text-base my-[5rem]">
+    <div className="flex flex-col gap-6 text-base">
       {/* Subtitle */}
       <p className="text-brown text-lg">{subtitle}</p>
       {/* Title */}

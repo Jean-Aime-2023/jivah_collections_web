@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { FaShoppingCart, FaEye, FaLink } from 'react-icons/fa';

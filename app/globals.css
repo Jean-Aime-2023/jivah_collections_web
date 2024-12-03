@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body{
+  font-family: "Outfit", sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+::selection {
+  color: white;
+  background: #fbbf24;
+}

@@ -5,7 +5,7 @@ import React from 'react';
 const OurShop = () => {
   return (
     <div className="container mx-auto py-[5rem]">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-md:flex max-md:flex-wrap max-md:justify-center">
         {products.map((product) => (
           <Product
             key={product.id}

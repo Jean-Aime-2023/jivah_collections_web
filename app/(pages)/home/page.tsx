@@ -91,7 +91,7 @@ const Home = () => {
       {adContent.map((ad) => (
         <div
           key={ad.id}
-          className="bg-gray-100 rounded-3xl py-10 flex items-center justify-center gap-[10rem] mx-20"
+          className="bg-gray-100 rounded-3xl py-10 flex items-center justify-center gap-[10rem] mx-20 max-md:flex-col max-md:mx-6 max-md:gap-[5rem]"
         >
           <div className="flex flex-col gap-5">
             <h3 className="text-3xl font-medium">{ad.name}</h3>
@@ -114,12 +114,12 @@ const Home = () => {
           tag="bestselling"
         />
       </div>
-      <div className="container mx-auto flex gap-6 w-fit">
-        <div className="w-[36rem] flex items-center justify-between border shadow-md rounded-xl px-10">
+      <div className="container mx-auto flex gap-6 w-fit max-lg:flex-col max-md:justify-center">
+        <div className="w-[50%] max-lg:w-full flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
           <div>
             <p className="text-2xl pb-6">Quality Products</p>
             <Button
-              onClick={() => router.push('/shop')}
+              onClick={() => router.push('/ourshop')}
               className="bg-transparent px-10 py-5 border-2 border-brown rounded-md text-black hover:bg-brown tracking-widest hover:border-transparent"
             >
               SHOP NOW
@@ -127,7 +127,7 @@ const Home = () => {
           </div>
           <Image src={imgGlass} alt="img" height={300} />
         </div>
-        <div className="w-[36rem] flex items-center justify-between border shadow-md rounded-xl px-10 py-10">
+        <div className="w-[50%] max-lg:w-full flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
           <div>
             <p className="text-2xl">Find all popular brands</p>
           </div>
@@ -136,11 +136,11 @@ const Home = () => {
       </div>
 
       <div className="flex flex-col gap-20 justify-center items-center">
-        <div className="container mx-auto flex gap-6 w-[62%] items-center mt-[7rem]">
+        <div className="container mx-auto flex max-lg:w-full max-md:flex-col gap-6 max-md:gap-10 w-[62%] items-center mt-[7rem]">
           <Image
             src={watchImg}
             alt="img"
-            className="w-[50%] h-[25rem] rounded-xl"
+            className="w-[50%] max-md:w-full h-[25rem] rounded-xl"
           />
           <div className="w-[50%] flex flex-col items-center justify-center gap-3">
             <p className="text-lg">Be Bold, Be Daring</p>
@@ -152,7 +152,7 @@ const Home = () => {
             </Button>
           </div>
         </div>
-        <div className="flex flex-wrap justify-between w-fit gap-[10rem]">
+        <div className="flex flex-wrap justify-between w-fit gap-[10rem] max-md:px-20 max-md:gap-[4rem]">
           {features.map((feature) => (
             <div
               key={feature.id}

@@ -44,7 +44,7 @@ const Product: React.FC<ProductProps> = ({
     <div
       onClick={handleProductClick}
       key={id}
-      className="group flex flex-col gap-1 items-center justify-center border rounded-lg p-5 text-lg relative cursor-pointer shadow-lg"
+      className="group flex flex-col gap-1 items-center justify-center border rounded-lg p-5 text-lg relative cursor-pointer shadow-lg max-md:w-[70%]"
     >
       <Image
         src={image}

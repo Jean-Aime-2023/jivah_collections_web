@@ -36,11 +36,11 @@ const ProductClass: React.FC<ProductClassProps> = ({
   return (
     <div className="flex flex-col gap-6 text-base">
       {/* Subtitle */}
-      <p className="text-brown text-lg">{subtitle}</p>
+      <p className="text-brown text-lg max-md:text-center">{subtitle}</p>
       {/* Title */}
-      <h4 className="text-4xl tracking-wide font-semibold">{title}</h4>
+      <h4 className="text-4xl tracking-wide font-semibold max-md:text-center">{title}</h4>
       {/* Map through filtered products */}
-      <div className="flex gap-4 overflow-x-auto">
+      <div className="flex gap-4 overflow-x-auto flex-wrap max-md:justify-center">
         {filteredProducts.map((product) => (
           <div
             onClick={() => router.push(`/product/${product.id}`)}

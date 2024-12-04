@@ -7,6 +7,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import { IoMenu, IoSearch } from 'react-icons/io5';
 import { MdShoppingCart } from 'react-icons/md';
 import { FaSignOutAlt } from 'react-icons/fa';
+import CartProduct from './CartProduct';
+import { Button } from '../ui/button';
 
 const links = [
   { id: 1, name: 'Home', link: '/home' },
@@ -23,14 +25,25 @@ const linksMobile = [
   { id: 6, name: 'Logout', link: '/sign-in' },
 ];
 
+const initialCartProducts = [
+  { id: 1, name: 'Lacoste T-Shirt', price: 50 },
+  { id: 2, name: 'Small Bag', price: 129.99 },
+  { id: 3, name: 'JC Complete', price: 39.99 },
+  { id: 4, name: 'Hoodie O', price: 129.99 },
+];
+
 const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu sidebar
   const pathname = usePathname();
   const router = useRouter();
+  const [cartProducts, setCartProducts] = useState(initialCartProducts);
+  const handleRemoveProduct = (id: number) => {
+    setCartProducts(cartProducts.filter((product) => product.id !== id));
+  };
 
   return (
-    <div className='shadow-sm'>
+    <div className="shadow-sm">
       {/* Main Header Section */}
       <section className="container mx-auto py-6 flex items-center justify-between bg-white relative max-md:px-6">
         <Image src={logo} alt="logo" />
@@ -115,8 +128,8 @@ const Header = () => {
             className="fixed inset-0 bg-black bg-opacity-50 z-40"
             onClick={() => setIsCartOpen(false)}
           ></div>
-          <div className="fixed top-0 right-0 h-full w-[35%] bg-white shadow-lg z-50 p-6 flex flex-col">
-            <div className="flex justify-between items-center mb-4 border-b">
+          <div className="fixed top-0 right-0 h-full w-[43%] bg-white shadow-lg z-50 p-6 flex flex-col">
+            <div className="flex justify-between items-center mb-4 border-b pb-5">
               <h2 className="text-lg font-bold">Your Cart</h2>
               <button
                 className="text-gray-600 hover:text-gray-900"
@@ -127,15 +140,40 @@ const Header = () => {
             </div>
             <div className="flex-1 overflow-y-auto">
               {/* Add cart items here */}
-              <p>Your cart is empty</p>
+              {cartProducts.map((product) => (
+                <CartProduct
+                  key={product.id}
+                  id={product.id}
+                  name={product.name}
+                  price={product.price}
+                  onRemove={handleRemoveProduct}
+                />
+              ))}
             </div>
-            <div className="mt-4 flex w-full gap-4">
-              <button className="flex-1 py-2 px-4 bg-brown text-white rounded-md hover:bg-opacity-90">
-                Proceed to Checkout
-              </button>
-              <button className="flex-1 py-2 px-4 bg-brown text-white rounded-md hover:bg-opacity-90">
-                View Cart
-              </button>
+            <div className="mt-4 flex flex-col w-full gap-4">
+              <div className="flex items-center justify-between py-4 border-b">
+                <p>Subtotal</p>
+                <p>
+                  $
+                  {cartProducts
+                    .reduce((total, product) => total + product.price, 0)
+                    .toFixed(2)}
+                </p>
+              </div>
+              <div className="flex gap-5 items-center">
+                <Button
+                  onClick={() => router.push('/checkout')}
+                  className="bg-brown hover:bg-amber-600 rounded-md text-white tracking-widest py-8 w-full my-4"
+                >
+                  PROCEED TO CHECKOUT
+                </Button>
+                <Button
+                  onClick={() => router.push('/shop')}
+                  className="bg-transparent border hover:border-transparent hover:bg-brown hover:text-white rounded-md text-brown tracking-widest py-8 w-full"
+                >
+                  CONTINUE SHOPPING
+                </Button>{' '}
+              </div>
             </div>
           </div>
         </>

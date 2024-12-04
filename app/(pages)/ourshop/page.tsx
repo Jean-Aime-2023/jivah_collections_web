@@ -1,3 +1,4 @@
+"use client"
 import Product from '@/components/app/Product';
 import { products } from '@/constants/Products';
 import Aos from 'aos';

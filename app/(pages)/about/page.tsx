@@ -156,11 +156,11 @@ const About = () => {
         </div>
       </div>
       <div className="container mx-auto flex items-center justify-center my-[7rem] max-lg:text-xs">
-        <div className="flex flex-wrap justify-between items-center w-fit gap-[10rem] max-lg:gap-[5rem] max-lg:w-[80%]">
+        <div className="grid grid-cols-2 md:grid-cols-3 w-fit gap-[10rem] max-lg:gap-[5rem] max-lg:w-[80%]">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="flex flex-col justify-center items-center gap-4"
+              className="flex flex-col text-center justify-center items-center gap-4"
             >
               <div
                 className={`p-4 rounded-full border border-brown ${
@@ -169,7 +169,7 @@ const About = () => {
               >
                 {feature.icon}
               </div>
-              <p className="text-xl">{feature.name}</p>
+              <p className="text-xl max-sm:text-base">{feature.name}</p>
             </div>
           ))}
         </div>

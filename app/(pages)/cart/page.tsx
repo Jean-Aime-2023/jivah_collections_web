@@ -30,7 +30,7 @@ const Cart = () => {
       data-aos="fade-right"
       className="container mx-auto py-10 flex max-lg:flex-col gap-7"
     >
-      <div className="w-[70%] max-lg:w-full max-lg:px-7">
+      <div className="w-[60%] max-lg:w-full max-lg:px-7">
         <h1 className="text-4xl pb-5">Cart</h1>
         <div className="border shadow-md rounded-xl p-7 max-lg:p-5">
           {cartProducts.map((product) => (
@@ -56,15 +56,21 @@ const Cart = () => {
                 .toFixed(2)}
             </p>
           </div>
+          <div className="flex items-center justify-between py-4 border-b">
+            <p>Shipping</p>
+            <p>
+              $ 20
+            </p>
+          </div>
           <Button
             onClick={() => router.push('/checkout')}
-            className="bg-brown hover:bg-amber-600 rounded-md text-white tracking-widest py-8 w-full my-4"
+            className="bg-brown hover:bg-amber-600 rounded-md text-white tracking-widest py-8 w-full my-4 max-lg:py-6"
           >
             PROCEED TO CHECKOUT
           </Button>
           <Button
             onClick={() => router.push('/shop')}
-            className="bg-transparent border hover:border-transparent hover:bg-brown hover:text-white rounded-md mb-4 text-brown tracking-widest py-8 w-full"
+            className="bg-transparent border hover:border-transparent hover:bg-brown hover:text-white rounded-md max-lg:py-6 mb-4 text-brown tracking-widest py-8 w-full"
           >
             CONTINUE SHOPPING
           </Button>

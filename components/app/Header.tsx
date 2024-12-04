@@ -45,8 +45,8 @@ const Header = () => {
   return (
     <div className="shadow-sm">
       {/* Main Header Section */}
-      <section className="container mx-auto py-6 flex items-center justify-between bg-white relative max-md:px-6">
-        <Image src={logo} alt="logo" />
+      <section className="container mx-auto py-6 flex items-center justify-between bg-white relative max-md:px-6 max-md:py-4">
+        <Image src={logo} alt="logo" className='max-md:w-14' />
         <ul className="hidden md:flex items-center gap-5">
           {links.map((link) => (
             <Link
@@ -95,7 +95,7 @@ const Header = () => {
           {/* Sidebar */}
           <div className="fixed top-0 left-0 h-full w-[70%] bg-white shadow-lg z-50 p-6 flex flex-col">
             <div className="flex justify-between items-center mb-6">
-              <Image src={logo} alt="logo" />
+              <Image src={logo} alt="logo" className='max-md:w-14' />
               <button
                 className="text-gray-600 hover:text-gray-900"
                 onClick={() => setIsMenuOpen(false)} // Close menu

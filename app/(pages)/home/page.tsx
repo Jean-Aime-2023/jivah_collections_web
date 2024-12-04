@@ -119,8 +119,8 @@ const Home = () => {
           tag="bestselling"
         />
       </div>
-      <div className="container mx-auto flex gap-6 w-fit max-lg:flex-col max-md:justify-center">
-        <div className="w-[50%] max-lg:w-full flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
+      <div className="container mx-auto flex gap-6 w-fit max-lg:flex-col max-md:justify-center max-md:items-center">
+        <div className="w-[50%] max-lg:w-[90%] flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
           <div>
             <p className="text-2xl pb-6">Quality Products</p>
             <Button
@@ -130,13 +130,23 @@ const Home = () => {
               SHOP NOW
             </Button>
           </div>
-          <Image src={imgGlass} alt="img" height={300} />
+          <Image
+            src={imgGlass}
+            alt="img"
+            height={300}
+            className="max-sm:h-44 max-sm:w-44"
+          />
         </div>
-        <div className="w-[50%] max-lg:w-full flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
+        <div className="w-[50%] max-lg:w-[90%] flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
           <div>
             <p className="text-2xl">Find all popular brands</p>
           </div>
-          <Image src={imgFume} alt="img" height={300} />
+          <Image
+            src={imgFume}
+            alt="img"
+            height={300}
+            className="max-sm:h-44 max-sm:w-44"
+          />
         </div>
       </div>
 
@@ -145,11 +155,11 @@ const Home = () => {
           <Image
             src={watchImg}
             alt="img"
-            className="w-[50%] max-md:w-full h-[25rem] rounded-xl"
+            className="w-[50%] max-md:w-full h-[25rem] max-md:h-full rounded-xl"
           />
           <div className="w-[50%] flex flex-col items-center justify-center gap-3">
             <p className="text-lg">Be Bold, Be Daring</p>
-            <h2 className="text-4xl text-center">
+            <h2 className="text-4xl text-center max-md:text-2xl">
               A Whole New <br /> Look
             </h2>
             <Button className="px-10 py-5 border-2 border-transparent hover:bg-transparent rounded-md text-black bg-brown tracking-widest hover:border-brown">
@@ -157,22 +167,24 @@ const Home = () => {
             </Button>
           </div>
         </div>
-        <div className="flex flex-wrap justify-between w-fit gap-[10rem] max-md:px-20 max-md:gap-[4rem]">
-          {features.map((feature) => (
-            <div
-              key={feature.id}
-              className="flex flex-col justify-center items-center gap-4"
-            >
+        <div className="flex justify-center items-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 w-fit gap-[10rem] container max-md:px-20 max-md:gap-[4rem]">
+            {features.map((feature) => (
               <div
-                className={`p-4 rounded-full border border-brown ${
-                  feature.rotate ? '-rotate-45' : ''
-                }`}
+                key={feature.id}
+                className="flex flex-col justify-center items-center gap-4 text-center w-24"
               >
-                {feature.icon}
+                <div
+                  className={`p-4 rounded-full border border-brown ${
+                    feature.rotate ? '-rotate-45' : ''
+                  }`}
+                >
+                  {feature.icon}
+                </div>
+                <p className="text-xl max-sm:text-base">{feature.name}</p>
               </div>
-              <p className="text-xl">{feature.name}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <div className="w-full">
           <div className="bg-[#fff7ed] py-[5rem]">
@@ -188,9 +200,9 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="bg-[#f1f5f9] py-[3rem] flex flex-col items-center justify-center text-center gap-5 text-xl">
+          <div className="bg-[#f1f5f9] py-[3rem] flex flex-col items-center justify-center text-center gap-5 text-xl max-md:text-lg">
             <p className="text-brown">Testimonials</p>
-            <h3 className="text-4xl">Our Happy Clients</h3>
+            <h3 className="text-4xl max-sm:text-3xl">Our Happy Clients</h3>
             <p className="text-gray-500">
               &quot;Jivah Collections are the best, nothing you can&apos;t find
               there.&quot;

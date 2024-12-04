@@ -35,10 +35,8 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
       if (!isSignIn) {
         // Navigate to home on successful registration
         router.push('/sign-in');
-        alert('Register successful!');
       } else {
         // Handle login logic here
-        alert('Login successful!');
         router.push('/home');
       }
     }, 2000);
@@ -50,11 +48,11 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
     <div className="flex flex-col gap-4 justify-center items-center w-full">
       <div className="flex items-center gap-3">
         <Image src={logo} alt="logo" height={60} width={60} />
-        <h4 className="text-xl text-brown font-medium">JIVAH COLLECTIONS</h4>
+        <h4 className="text-xl text-brown font-medium max-md:text-lg">JIVAH COLLECTIONS</h4>
       </div>
 
       {/* Titles */}
-      <h3 className="font-semibold text-4xl">
+      <h3 className="font-semibold text-4xl max-sm:text-xl">
         {isSignIn ? 'Welcome Back' : 'Welcome'}
       </h3>
       <p className="text-gray-500">
@@ -69,7 +67,7 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
               name="username"
               id="username"
               placeholder="Username"
-              className="bg-gray-100 rounded-lg px-5 py-4 placeholder-black outline-none"
+              className="bg-gray-100 rounded-lg px-5 py-4 placeholder-black outline-none max-sm:py-3 max-sm:px-4"
             />
           )}
           <input
@@ -77,14 +75,14 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
             name="email"
             id="email"
             placeholder="Email address"
-            className="bg-gray-100 rounded-lg px-5 py-4 placeholder-black outline-none"
+            className="bg-gray-100 rounded-lg px-5 py-4 placeholder-black outline-none max-sm:py-3 max-sm:px-4"
           />
           <input
             type="password"
             name="password"
             id="password"
             placeholder="Password"
-            className="bg-gray-100 rounded-lg px-5 py-4 placeholder-black outline-none"
+            className="bg-gray-100 rounded-lg px-5 py-4 placeholder-black outline-none max-sm:py-3 max-sm:px-4"
           />
           {!isSignIn && (
             <input
@@ -92,7 +90,7 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
               name="confirm-password"
               id="confirm-password"
               placeholder="Confirm Password"
-              className="bg-gray-100 rounded-lg px-5 py-4 placeholder-black outline-none"
+              className="bg-gray-100 rounded-lg px-5 py-4 placeholder-black outline-none max-sm:py-3 max-sm:px-4"
             />
           )}
           {isSignIn && (
@@ -101,7 +99,7 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
         </div>
 
         <Button
-          className="w-full py-7 bg-brown rounded-lg my-3 hover:bg-[#db9744]"
+          className="w-full py-7 max-sm:py-5 bg-brown rounded-lg my-3 hover:bg-[#db9744]"
           disabled={isLoading}
           onClick={handleSubmit}
         >
@@ -118,7 +116,7 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
         </Button>
       </form>
 
-      <div className="flex items-center justify-center gap-2 w-[90%]">
+      <div className="flex items-center justify-center gap-2 w-[90%] max-md:w-full">
         <hr className="border border-gray-300 w-[30%]" />
         <p className="text-gray-500 text-xs">
           {isSignIn ? 'Or Login With' : 'Or Signup With'}
@@ -132,8 +130,8 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
             key={logo.id}
             className="border rounded-lg py-3 flex gap-1 justify-center items-center flex-1 cursor-pointer"
           >
-            <Image src={logo.img} alt="logo" width={20} height={20} />
-            <p className="text-xs">{logo.name}</p>
+            {logo.id===3?<Image src={logo.img} alt="logo" width={40} height={40} />:<Image src={logo.img} alt="logo" width={20} height={20} />}
+            <p className="text-xs max-sm:hidden">{logo.name}</p>
           </div>
         ))}
       </div>

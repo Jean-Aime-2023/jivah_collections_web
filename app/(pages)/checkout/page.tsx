@@ -54,11 +54,11 @@ const CheckOut = () => {
   }, []);
 
   return (
-    <div data-aos="fade-left" className="container mx-auto flex gap-20 my-[5rem] max-lg:flex-col">
-      <div className="w-[50%] p-7 border flex flex-col gap-6 rounded-lg shadow">
+    <div data-aos="fade-left" className="container mx-auto flex gap-20 my-[3rem] max-lg:flex-col max-lg:justify-center max-lg:items-center">
+      <div className="w-[50%] max-lg:w-[96%] p-7 border flex flex-col gap-6 rounded-lg shadow">
         <h4 className="font-semibold">Billing Details</h4>
         <form action="" className="w-full flex flex-col gap-4">
-          <div className="w-full flex gap-6">
+          <div className="w-full flex max-lg:flex-col gap-6">
             <div className="flex flex-col gap-1 w-full">
               <label htmlFor="">First Name</label>
               <input
@@ -134,7 +134,7 @@ const CheckOut = () => {
           </div>
         </form>
       </div>
-      <div className="w-[50%] p-7 border flex flex-col gap-6 rounded-lg shadow text-gray-500">
+      <div className="w-[50%] max-lg:w-[96%] p-7 border flex flex-col gap-6 rounded-lg shadow text-gray-500">
         <h4 className="font-semibold">Your Order</h4>
         <div className="w-full flex flex-col gap-4 border-b pb-7">
           <div className="flex items-center justify-between text-black">
@@ -182,7 +182,7 @@ const CheckOut = () => {
                 className="bg-gray-100 p-3 outline-none"
               />
             </div>
-            <Button className="tracking-widest border border-blue-600 text-blue-600 bg-transparent p-6 hover:bg-blue-600 hover:text-white">
+            <Button className="tracking-widest border border-blue-600 text-blue-600 bg-transparent p-6 max-lg:p-4 hover:bg-blue-600 hover:text-white">
               APPLY
             </Button>
           </div>

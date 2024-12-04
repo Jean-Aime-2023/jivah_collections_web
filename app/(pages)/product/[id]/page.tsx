@@ -25,9 +25,9 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="container mx-auto py-[5rem]">
-      <div className="flex flex-col gap-9">
-        <div className="flex gap-8">
+    <div className="container mx-auto py-[5rem] max-md:px-7">
+      <div className="flex flex-col gap-9 mb-20">
+        <div className="flex gap-8 max-md:flex-col">
           <div className="flex flex-1 flex-col gap-4">
             <Image
               src={selectedImage || product.image}
@@ -36,7 +36,7 @@ const ProductDetails = () => {
               height={500}
               className="rounded-lg border"
             />
-            <div className="flex flex-wrap gap-4 overflow-hidden">
+            <div className="flex flex-wrap max-md:grid max-md:grid-cols-2 gap-4 overflow-hidden">
               {product.otherColors?.map((color, index) => (
                 <div
                   key={index}
@@ -90,7 +90,7 @@ const ProductDetails = () => {
       </div>
       
       
-      <ProductClass title={''} subtitle={''} tag={'latest'} />
+      <ProductClass title={'Related Products'} subtitle={'New To You'} tag={'latest'} />
     </div>
   );
 };

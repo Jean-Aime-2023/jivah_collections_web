@@ -19,20 +19,20 @@ const Categories = () => {
       className="container mx-auto flex gap-10 py-14 text-gray-500 max-xl:flex-col max-lg:gap-7"
     >
       {/* Left Sidebar (Categories) */}
-      <div className="w-[25%] border-r px-6 flex flex-col gap-5 max-:wxl-full max-xl:order-2">
-        <div className="flex items-center gap-2">
+      <div className="w-[25%] border-r px-6 flex flex-col gap-5 max-xl:w-full max-xl:order-2">
+        <div className="flex items-center gap-2 max-xl:w-full">
           <input
             type="text"
-            className="p-3 border outline-none"
+            className="p-3 border outline-none max-xl:w-full"
             placeholder="Search products..."
           />
-          <button type="submit" className="p-3 bg-brown">
+          <button type="submit" className="p-3 bg-brown max-xl:p-2">
             <FaAngleRight size={24} color="black" />
           </button>
         </div>
         <h3 className="text-4xl">Filter by price</h3>
         <p className="text-2xl text-gray-500">Filter by categories</p>
-        <div className="px-5 flex flex-col gap-1">
+        <div className="px-5 flex flex-col gap-1 max-xl:grid max-xl:grid-cols-3 max-xl:gap-4">
           {categories.map((category) => (
             <Link href={'#'} key={category} className="text-brown">
               {category}

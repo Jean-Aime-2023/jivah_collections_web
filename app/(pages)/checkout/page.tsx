@@ -1,11 +1,13 @@
 'use client';
 import { Button } from '@/components/ui/button';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import urubutoImg from '@/public/assets/urubuto.png';
 import mtn from '@/public/assets/mtn.png';
 import airtel from '@/public/assets/airtel.png';
 import visa from '@/public/assets/visa.png';
 import Image from 'next/image';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 // List of countries
 const countries = [
@@ -47,8 +49,12 @@ const CheckOut = () => {
     console.log('Selected Payment Method:', e.target.value);
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
-    <div className="container mx-auto flex gap-20 my-[5rem]">
+    <div data-aos="fade-left" className="container mx-auto flex gap-20 my-[5rem]">
       <div className="w-[50%] p-7 border flex flex-col gap-6 rounded-lg shadow">
         <h4 className="font-semibold">Billing Details</h4>
         <form action="" className="w-full flex flex-col gap-4">

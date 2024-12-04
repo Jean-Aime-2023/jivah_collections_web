@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import img1 from '@/public/assets/hero.jpg';
 import img2 from '@/public/assets/menfash.png';
 import img3 from '@/public/assets/kids.jpg';
@@ -20,6 +20,8 @@ import nike from '@/public/assets/nikelogo.jpg';
 import gucci from '@/public/assets/guccilogo.jpg';
 import logo from '@/public/assets/logo.png';
 import { useRouter } from 'next/navigation';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const adContent = [
   {
@@ -84,9 +86,12 @@ const partners = [
 ];
 
 const Home = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   const router = useRouter();
   return (
-    <section className="flex flex-col gap-7">
+    <section className="flex flex-col gap-7 pt-7" data-aos="fade-right">
       {/* ad divs */}
       {adContent.map((ad) => (
         <div

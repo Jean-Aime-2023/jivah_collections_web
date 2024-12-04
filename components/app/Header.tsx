@@ -30,9 +30,9 @@ const Header = () => {
   const router = useRouter();
 
   return (
-    <>
+    <div className='shadow-sm'>
       {/* Main Header Section */}
-      <section className="container mx-auto py-6 flex items-center justify-between bg-white relative max-md:px-6 shadow-sm">
+      <section className="container mx-auto py-6 flex items-center justify-between bg-white relative max-md:px-6">
         <Image src={logo} alt="logo" />
         <ul className="hidden md:flex items-center gap-5">
           {links.map((link) => (
@@ -140,7 +140,7 @@ const Header = () => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 

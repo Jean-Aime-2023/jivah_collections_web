@@ -1,20 +1,47 @@
-"use client"
+'use client';
 import CartProduct from '@/components/app/CartProduct';
 import { Button } from '@/components/ui/button';
+import Aos from 'aos';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import 'aos/dist/aos.css';
+
+const initialCartProducts = [
+  { id: 1, name: 'Lacoste T-Shirt', price: 50 },
+  { id: 2, name: 'Small Bag', price: 129.99 },
+  { id: 3, name: 'JC Complete', price: 39.99 },
+  { id: 4, name: 'Hoodie O', price: 129.99 },
+];
 
 const Cart = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   const router = useRouter();
+  const [cartProducts, setCartProducts] = useState(initialCartProducts);
+
+  const handleRemoveProduct = (id: number) => {
+    setCartProducts(cartProducts.filter((product) => product.id !== id));
+  };
+
   return (
-    <div className="container mx-auto py-10 flex max-lg:flex-col gap-7">
+    <div
+      data-aos="fade-right"
+      className="container mx-auto py-10 flex max-lg:flex-col gap-7"
+    >
       <div className="w-[70%] max-lg:w-full max-lg:px-7">
         <h1 className="text-4xl pb-5">Cart</h1>
         <div className="border shadow-md rounded-xl p-7 max-lg:p-5">
-          <CartProduct />
-          <CartProduct />
-          <CartProduct />
-          <CartProduct />
+          {cartProducts.map((product) => (
+            <CartProduct
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              onRemove={handleRemoveProduct}
+            />
+          ))}
         </div>
       </div>
       <div className="w-[30%] max-lg:w-full max-lg:px-7">
@@ -22,17 +49,12 @@ const Cart = () => {
         <div className="border shadow-md rounded-xl p-7">
           <div className="flex items-center justify-between py-4 border-b">
             <p>Subtotal</p>
-            <p>Fr 145.000</p>
-          </div>
-          <div className="flex items-center justify-between py-4 border-b">
-            <p>Shipping</p>
-            <p className="w-[8rem]">
-              No shipping options were found for Saint Barthélemy.
+            <p>
+              $
+              {cartProducts
+                .reduce((total, product) => total + product.price, 0)
+                .toFixed(2)}
             </p>
-          </div>
-          <div className="flex items-center justify-between py-4 border-b">
-            <p>Total</p>
-            <p>Fr 145.000</p>
           </div>
           <Button
             onClick={() => router.push('/checkout')}

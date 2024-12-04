@@ -2,12 +2,20 @@ import Product from '@/components/app/Product';
 import { categories } from '@/constants/Categories';
 import { products } from '@/constants/Products';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaAngleRight } from 'react-icons/fa';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Categories = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
-    <div className="container mx-auto flex gap-10 py-14 text-gray-500">
+    <div
+      data-aos="fade-right"
+      className="container mx-auto flex gap-10 py-14 text-gray-500"
+    >
       <div className="w-[25%] border-r px-6 flex flex-col gap-5">
         <div className="flex items-center gap-2">
           <input
@@ -32,7 +40,7 @@ const Categories = () => {
       <div className="w-[75%] px-6 flex flex-col gap-10">
         <p>Home / BOTH</p>
         <h1 className="text-6xl text-brown">BOTH</h1>
-        <div className='flex flex-row justify-between items-center w-full'>
+        <div className="flex flex-row justify-between items-center w-full">
           <p>Showing 1–20 of 50 results</p>
           {/* select input */}
           <select
@@ -48,7 +56,7 @@ const Categories = () => {
             <option value="popularity">Popularity</option>
           </select>
         </div>
-        <div className='flex flex-wrap gap-10'>
+        <div className="flex flex-wrap gap-10">
           {products.map((product) => (
             <Product
               key={product.id}

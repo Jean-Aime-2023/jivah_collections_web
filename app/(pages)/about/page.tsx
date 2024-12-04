@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import bgimg from '@/public/assets/shoe.png';
 import { FaCaretRight } from 'react-icons/fa';
 import img from '@/public/assets/hero.jpg';
@@ -14,6 +14,8 @@ import { IoCheckmarkCircle } from 'react-icons/io5';
 import { TbCertificate } from 'react-icons/tb';
 import { FaChartLine } from 'react-icons/fa';
 import { FaShoppingCart } from 'react-icons/fa';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const service1 = [
   { id: 1, name: 'Fashion Collections' },
@@ -80,9 +82,13 @@ const features = [
   },
 ];
 
+
 const About = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000});
+  }, []);
   return (
-    <div>
+    <div data-aos="fade-left">
       <div
         className="relative w-full h-[330px] bg-cover bg-center bg-no-repeat text-gray-500 text-lg"
         style={{ backgroundImage: `url(${bgimg.src})` }}

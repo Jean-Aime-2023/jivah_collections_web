@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import authImg from '@/public/assets/authImg.png';
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Authlayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="container mx-auto h-screen w-screen flex justify-center items-center">
       <section className="shadow-xl border rounded-3xl h-[90%] w-[72%] flex justify-center items-center p-16">
@@ -23,4 +23,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default layout;
+export default Authlayout;

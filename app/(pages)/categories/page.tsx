@@ -16,7 +16,7 @@ const Categories = () => {
   return (
     <div
       data-aos="fade-right"
-      className="container mx-auto flex gap-10 py-14 text-gray-500 max-lg:flex-col max-lg:gap-7"
+      className="container mx-auto flex gap-10 py-14 text-gray-500 max-xl:flex-col max-lg:gap-7"
     >
       {/* Left Sidebar (Categories) */}
       <div className="w-[25%] border-r px-6 flex flex-col gap-5 max-lg:w-full max-lg:order-2">

@@ -1,3 +1,4 @@
+"use client";
 import Product from '@/components/app/Product';
 import { categories } from '@/constants/Categories';
 import { products } from '@/constants/Products';
@@ -11,12 +12,14 @@ const Categories = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
+  
   return (
     <div
       data-aos="fade-right"
-      className="container mx-auto flex gap-10 py-14 text-gray-500"
+      className="container mx-auto flex gap-10 py-14 text-gray-500 max-lg:flex-col max-lg:gap-7"
     >
-      <div className="w-[25%] border-r px-6 flex flex-col gap-5">
+      {/* Left Sidebar (Categories) */}
+      <div className="w-[25%] border-r px-6 flex flex-col gap-5 max-lg:w-full max-lg:order-2">
         <div className="flex items-center gap-2">
           <input
             type="text"
@@ -37,12 +40,16 @@ const Categories = () => {
           ))}
         </div>
       </div>
-      <div className="w-[75%] px-6 flex flex-col gap-10">
+      
+      {/* Main Content (Products) */}
+      <div className="w-[75%] px-6 flex flex-col gap-10 max-lg:w-full max-lg:order-1">
         <p>Home / BOTH</p>
         <h1 className="text-6xl text-brown">BOTH</h1>
+        
         <div className="flex flex-row justify-between items-center w-full">
           <p>Showing 1–20 of 50 results</p>
-          {/* select input */}
+          
+          {/* Sort Select */}
           <select
             className="border p-2 rounded-md outline-none text-gray-600"
             defaultValue="default"
@@ -56,7 +63,9 @@ const Categories = () => {
             <option value="popularity">Popularity</option>
           </select>
         </div>
-        <div className="flex flex-wrap gap-10">
+        
+        {/* Product Grid */}
+        <div className="flex flex-wrap gap-10 max-lg:justify-center">
           {products.map((product) => (
             <Product
               key={product.id}

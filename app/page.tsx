@@ -1,7 +1,7 @@
+import SignIn from "./(auth)/sign-in/page";
+
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-4xl">Hello everyone</h1>
-    </div>
+    <SignIn/>
   );
 }

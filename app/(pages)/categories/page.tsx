@@ -19,7 +19,7 @@ const Categories = () => {
       className="container mx-auto flex gap-10 py-14 text-gray-500 max-xl:flex-col max-lg:gap-7"
     >
       {/* Left Sidebar (Categories) */}
-      <div className="w-[25%] border-r px-6 flex flex-col gap-5 max-lg:w-full max-lg:order-2">
+      <div className="w-[25%] border-r px-6 flex flex-col gap-5 max-:wxl-full max-xl:order-2">
         <div className="flex items-center gap-2">
           <input
             type="text"
@@ -42,7 +42,7 @@ const Categories = () => {
       </div>
       
       {/* Main Content (Products) */}
-      <div className="w-[75%] px-6 flex flex-col gap-10 max-lg:w-full max-lg:order-1">
+      <div className="w-[75%] px-6 flex flex-col gap-10 max-xl:w-full max-xl:order-1">
         <p>Home / BOTH</p>
         <h1 className="text-6xl text-brown">BOTH</h1>
         

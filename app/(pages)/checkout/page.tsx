@@ -54,7 +54,7 @@ const CheckOut = () => {
   }, []);
 
   return (
-    <div data-aos="fade-left" className="container mx-auto flex gap-20 my-[5rem]">
+    <div data-aos="fade-left" className="container mx-auto flex gap-20 my-[5rem] max-lg:flex-col">
       <div className="w-[50%] p-7 border flex flex-col gap-6 rounded-lg shadow">
         <h4 className="font-semibold">Billing Details</h4>
         <form action="" className="w-full flex flex-col gap-4">

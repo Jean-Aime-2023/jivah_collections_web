@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { RiStarSFill } from 'react-icons/ri';
 import { IoIosStarOutline } from 'react-icons/io';
 import { FaEye, FaLink, FaShoppingCart } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 
 interface ProductClassProps {
   title: string;
@@ -11,7 +12,12 @@ interface ProductClassProps {
   tag: string; // Use this to dynamically filter products
 }
 
-const ProductClass: React.FC<ProductClassProps> = ({ title, subtitle, tag }) => {
+const ProductClass: React.FC<ProductClassProps> = ({
+  title,
+  subtitle,
+  tag,
+}) => {
+  const router = useRouter();
   // Dynamically filter products based on the provided tag
   const filteredProducts = products.filter((product) => product.tag === tag);
 
@@ -37,6 +43,7 @@ const ProductClass: React.FC<ProductClassProps> = ({ title, subtitle, tag }) => 
       <div className="flex gap-4 overflow-x-auto">
         {filteredProducts.map((product) => (
           <div
+            onClick={() => router.push(`/product/${product.id}`)}
             key={product.id}
             className="group flex flex-col gap-1 items-center justify-center border rounded-lg p-5 text-lg relative cursor-pointer"
           >

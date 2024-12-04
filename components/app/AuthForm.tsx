@@ -34,10 +34,12 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
 
       if (!isSignIn) {
         // Navigate to home on successful registration
-        router.push('/home');
+        router.push('/sign-in');
+        alert('Register successful!');
       } else {
         // Handle login logic here
         alert('Login successful!');
+        router.push('/home');
       }
     }, 2000);
   };

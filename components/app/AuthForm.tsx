@@ -99,7 +99,7 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
         </div>
 
         <Button
-          className="w-full py-7 max-sm:py-5 bg-brown rounded-lg my-3 hover:bg-[#db9744]"
+          className="w-full py-7 max-sm:py-5 bg-brown rounded-lg my-6 hover:bg-[#db9744]"
           disabled={isLoading}
           onClick={handleSubmit}
         >

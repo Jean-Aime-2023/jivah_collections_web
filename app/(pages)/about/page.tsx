@@ -53,7 +53,7 @@ const features = [
   {
     id: 1,
     icon: <FaRegLightbulb color="#db9744" size={30} />,
-    name: 'Innovative Fashion Solutions',
+    name: 'Innovative Fashion',
     rotate: false,
   },
   {
@@ -71,7 +71,7 @@ const features = [
   {
     id: 4,
     icon: <TbCertificate color="#db9744" size={30} />,
-    name: 'Customer-Centric Approach',
+    name: 'Customer-Centric',
     rotate: false,
   },
   {
@@ -82,10 +82,9 @@ const features = [
   },
 ];
 
-
 const About = () => {
   useEffect(() => {
-    Aos.init({ duration: 2000});
+    Aos.init({ duration: 2000 });
   }, []);
   return (
     <div data-aos="fade-left">
@@ -156,7 +155,7 @@ const About = () => {
         </div>
       </div>
       <div className="container mx-auto flex items-center justify-center my-[7rem] max-lg:text-xs">
-        <div className="grid grid-cols-2 md:grid-cols-3 w-fit gap-[10rem] max-lg:gap-[5rem] max-lg:w-[80%]">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 w-fit gap-[10rem] max-lg:gap-[2rem] max-lg:w-[80%]">
           {features.map((feature) => (
             <div
               key={feature.id}
@@ -174,8 +173,8 @@ const About = () => {
           ))}
         </div>
       </div>
-      <div className="bg-[#fff7ed] py-[5rem]">
-        <div className="container mx-auto flex justify-center items-center gap-7 animate-scroll">
+      <div className="bg-[#fff7ed] py-[5rem] w-full">
+        <div className="container w-full mx-auto flex justify-center max-lg:justify-start items-center gap-7 overflow-x-auto whitespace-nowrap scroll-snap-x scroll">
           {partners.map((partner) => (
             <Image
               key={partner.id}
@@ -192,29 +191,3 @@ const About = () => {
 };
 
 export default About;
-
-<style jsx>{`
-  /* Animation for scrolling */
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  .animate-scroll {
-    display: flex;
-    animation: scroll 15s linear infinite;
-  }
-
-  /* Hide scrollbar */
-  .container::-webkit-scrollbar {
-    display: none;
-  }
-  .container {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-`}</style>;

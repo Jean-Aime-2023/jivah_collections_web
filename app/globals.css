@@ -8,7 +8,7 @@ html,
 body{
   font-family: "Outfit", sans-serif;
   height: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 @layer base {
@@ -20,4 +20,8 @@ body{
 ::selection {
   color: white;
   background: #fbbf24;
+}
+
+.scroll::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }

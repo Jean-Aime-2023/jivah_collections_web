@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased max-md:text-xs`}
+        className={`antialiased max-md:text-xs !scroll-smooth`}
       >
         {children}
       </body>

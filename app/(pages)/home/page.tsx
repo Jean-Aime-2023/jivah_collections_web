@@ -120,7 +120,7 @@ const Home = () => {
         />
       </div>
       <div className="container mx-auto flex gap-6 w-fit max-lg:flex-col max-md:justify-center max-md:items-center">
-        <div className="w-[50%] max-lg:w-[90%] flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
+        <div className="w-[50%] max-lg:w-[100%] flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
           <div>
             <p className="text-2xl pb-6">Quality Products</p>
             <Button
@@ -137,7 +137,7 @@ const Home = () => {
             className="max-sm:h-44 max-sm:w-44"
           />
         </div>
-        <div className="w-[50%] max-lg:w-[90%] flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
+        <div className="w-[50%] max-lg:w-[100%] flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
           <div>
             <p className="text-2xl">Find all popular brands</p>
           </div>
@@ -187,8 +187,8 @@ const Home = () => {
           </div>
         </div>
         <div className="w-full">
-          <div className="bg-[#fff7ed] py-[5rem]">
-            <div className="container mx-auto flex justify-center items-center gap-7">
+          <div className="bg-[#fff7ed] py-[5rem] w-full">
+            <div className="container w-full mx-auto flex justify-center max-lg:justify-start items-center gap-7 overflow-x-auto whitespace-nowrap scroll-snap-x scroll">
               {partners.map((partner) => (
                 <Image
                   key={partner.id}

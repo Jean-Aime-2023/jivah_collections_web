@@ -2,31 +2,44 @@
 
 import Footer from '@/components/app/Footer';
 import Header from '@/components/app/Header';
-import { FaArrowUp } from 'react-icons/fa';
+import { ChevronUp } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const scrollToTop = () => {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const handleScrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Smooth scrolling effect
+      behavior: 'smooth',
     });
   };
-
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button if scroll position is greater than the viewport height
+      setShowScrollTop(window.scrollY > window.innerHeight);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow">{children}</main>
       <div id="footer">
+        <main className="flex-grow">{children}</main>
         <Footer />
       </div>
-
-      {/* Scroll-to-top button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-4 right-4 bg-brown text-white p-3 rounded-full shadow-lg hover:bg-blue-700 z-50"
-      >
-        <FaArrowUp />
-      </button>
+      {showScrollTop && (
+        <button
+          onClick={handleScrollToTop}
+          className="fixed right-3 bottom-[10px]"
+        >
+          <div className="md:w-[80px] md:h-[80px] w-[40px] h-[40px] bg-brown flex items-center justify-center rounded-full shadow-md">
+            <ChevronUp className="text-white md:w-[40px] w-[25px]" />
+          </div>
+        </button>
+      )}
     </div>
   );
 };

@@ -168,23 +168,23 @@ const Home = () => {
           </div>
         </div>
         <div className="flex justify-center items-center">
-          <div className="grid grid-cols-2 md:grid-cols-3 w-fit gap-[10rem] container max-md:px-20 max-md:gap-[4rem]">
-            {features.map((feature) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 w-fit gap-[10rem] max-lg:gap-[2rem] max-lg:w-[80%]">
+          {features.map((feature) => (
+            <div
+              key={feature.id}
+              className="flex flex-col text-center justify-center items-center gap-4"
+            >
               <div
-                key={feature.id}
-                className="flex flex-col justify-center items-center gap-4 text-center w-24"
+                className={`p-4 rounded-full border border-brown ${
+                  feature.rotate ? '-rotate-45' : ''
+                }`}
               >
-                <div
-                  className={`p-4 rounded-full border border-brown ${
-                    feature.rotate ? '-rotate-45' : ''
-                  }`}
-                >
-                  {feature.icon}
-                </div>
-                <p className="text-xl max-sm:text-base">{feature.name}</p>
+                {feature.icon}
               </div>
-            ))}
-          </div>
+              <p className="text-xl max-sm:text-base">{feature.name}</p>
+            </div>
+          ))}
+        </div>
         </div>
         <div className="w-full">
           <div className="bg-[#fff7ed] py-[5rem] w-full">

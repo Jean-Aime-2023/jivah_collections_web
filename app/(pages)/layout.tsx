@@ -1,14 +1,14 @@
-"use client"; // Marks this file as a Client Component
+'use client'; // Marks this file as a Client Component
 
-import Footer from "@/components/app/Footer";
-import Header from "@/components/app/Header";
-import { FaArrowUp } from "react-icons/fa";
+import Footer from '@/components/app/Footer';
+import Header from '@/components/app/Header';
+import { FaArrowUp } from 'react-icons/fa';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Smooth scrolling effect
+      behavior: 'smooth', // Smooth scrolling effect
     });
   };
 
@@ -20,7 +20,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <Footer />
       </div>
 
-      {/* Scroll-to-top button */} 
+      {/* Scroll-to-top button */}
       <button
         onClick={scrollToTop}
         className="fixed bottom-4 right-4 bg-brown text-white p-3 rounded-full shadow-lg hover:bg-blue-700 z-50"

@@ -2,9 +2,8 @@ import React from 'react';
 import { products } from '@/constants/Products';
 import Image from 'next/image';
 import { RiStarSFill } from 'react-icons/ri';
-import { IoIosStarOutline } from 'react-icons/io';
-import { FaEye, FaLink, FaShoppingCart } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
+import { FaCartShopping } from 'react-icons/fa6';
 
 interface ProductClassProps {
   title: string;
@@ -20,64 +19,47 @@ const ProductClass: React.FC<ProductClassProps> = ({
   const router = useRouter();
   // Dynamically filter products based on the provided tag
   const filteredProducts = products.filter((product) => product.tag === tag);
-
-  const renderStars = (rating: number) => {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        stars.push(<RiStarSFill key={i} size={20} fill="#eab308" />);
-      } else {
-        stars.push(<IoIosStarOutline key={i} size={20} color="#eab308" />);
-      }
-    }
-    return stars;
-  };
+  const limitedProducts = filteredProducts.slice(0, 3);
 
   return (
     <div className="flex flex-col gap-6 text-base">
       {/* Subtitle */}
       <p className="text-brown text-lg max-md:text-center">{subtitle}</p>
       {/* Title */}
-      <h4 className="text-4xl tracking-wide font-semibold max-md:text-center">{title}</h4>
+      <h4 className="text-4xl tracking-wide font-semibold max-md:text-center">
+        {title}
+      </h4>
       {/* Map through filtered products */}
-      <div className="flex gap-4 overflow-x-auto flex-wrap max-md:justify-center">
-        {filteredProducts.map((product) => (
+      <div className="grid md:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-6">
+        {limitedProducts.map((product) => (
           <div
             onClick={() => router.push(`/product/${product.id}`)}
             key={product.id}
-            className="group flex flex-col gap-1 items-center justify-center border rounded-lg p-5 text-lg relative cursor-pointer"
+            className="group bg-white/95 max-md:mx-5 max-md:my-2 border flex rounded-3xl flex-col gap-1 items-center justify-center text-lg relative cursor-pointer hover:scale-105 transition-transform duration-200 hover:shadow"
           >
+            <div className="p-3 rounded-full shadow-lg border absolute right-5 top-5 bg-white">
+              <FaCartShopping size={23} color="#4a4747" />
+            </div>
             <Image
               src={product.image}
               alt={product.name}
-              className="w-60 h-52 object-cover rounded-lg"
+              className="w-96 h-72 object-cover rounded-3xl p-2"
             />
-            <div className="flex">{renderStars(product.rating)}</div>
-            <p className="text-center mt-2 text-gray-700">{product.name}</p>
-            <div className="flex items-center gap-1">
-              <p className="line-through">$ {product.crossedPrice}</p>
-              <p>$ {product.price}</p>
-            </div>
-            <div className="absolute w-fit bg-red-600 text-white px-3 py-1 top-6 left-0 text-xs">
-              Sale!
-            </div>
-
-            {/* Hover icons - 1 */}
-            <div className="group-hover:flex hidden items-center gap-5 absolute top-24 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
-              <div className="bg-black/75 p-3 rounded cursor-pointer">
-                <FaShoppingCart color="white" />
+            <div className="w-96 p-5 max-md:w-[90%]">
+              <p className="font-bold text-2xl max-md:text-xl">
+                {product.name}
+              </p>
+              <p className="text-gray-400 text-sm py-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+                suscipit sequi.
+              </p>
+              <div className="w-full flex items-center justify-between">
+                <p className="font-bold text-2xl">$ {product.price}</p>
+                <div className='flex items-center gap-1'>
+                  <RiStarSFill size={20} fill="#eab308" />
+                  {product.rating}
+                </div>
               </div>
-              <div className="bg-black/75 p-3 rounded cursor-pointer">
-                <FaEye color="white" />
-              </div>
-              <div className="bg-black/75 p-3 rounded cursor-pointer">
-                <FaLink color="white" />
-              </div>
-            </div>
-
-            {/* Hover icons - 2 */}
-            <div className="group-hover:flex hidden p-2 bg-white rounded-full cursor-pointer shadow-lg absolute top-5 right-5 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
-              <FaShoppingCart />
             </div>
           </div>
         ))}

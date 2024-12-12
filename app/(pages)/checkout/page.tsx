@@ -182,7 +182,7 @@ const CheckOut = () => {
                 className="bg-gray-100 p-3 outline-none"
               />
             </div>
-            <Button className="tracking-widest border border-blue-600 text-blue-600 bg-transparent p-6 max-lg:p-4 hover:bg-blue-600 hover:text-white">
+            <Button className="button tracking-widest border border-blue-600 text-blue-600 bg-transparent p-6 max-lg:p-4 hover:bg-blue-600 hover:text-white">
               APPLY
             </Button>
           </div>

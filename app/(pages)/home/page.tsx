@@ -96,14 +96,14 @@ const Home = () => {
       {adContent.map((ad) => (
         <div
           key={ad.id}
-          className="bg-gray-100 rounded-3xl py-10 flex items-center justify-center gap-[10rem] mx-20 max-md:flex-col max-md:mx-6 max-md:gap-[5rem]"
+          className="bg-gray-100 rounded-3xl py-10 flex items-center justify-center gap-[10rem] mx-20 max-md:flex-col max-md:mx-6 max-md:gap-[5rem] container mx-auto"
         >
           <div className="flex flex-col gap-5">
             <h3 className="text-3xl font-medium">{ad.name}</h3>
             <p>A Whole New Look</p>
             <Button
               onClick={() => router.push('/ourshop')}
-              className="px-8 py-3 text-white w-fit bg-brown hover:bg-[#db9744] tracking-widest"
+              className="px-8 py-3 text-white w-fit bg-brown hover:bg-[#db9744] tracking-widest button"
             >
               SHOP NOW
             </Button>
@@ -120,12 +120,12 @@ const Home = () => {
         />
       </div>
       <div className="container mx-auto flex gap-6 w-fit max-lg:flex-col max-md:justify-center max-md:items-center">
-        <div className="w-[50%] max-lg:w-[100%] flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
+        <div className="w-[50%] max-lg:w-[100%] flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10 cursor-pointer hover:scale-105 transition-transform duration-200">
           <div>
             <p className="text-2xl pb-6">Quality Products</p>
             <Button
               onClick={() => router.push('/ourshop')}
-              className="bg-transparent px-10 py-5 border-2 border-brown rounded-md text-black hover:bg-brown tracking-widest hover:border-transparent"
+              className="bg-transparent px-10 py-5 border-2 border-brown rounded-md text-black hover:bg-brown tracking-widest hover:border-transparent button"
             >
               SHOP NOW
             </Button>
@@ -137,7 +137,7 @@ const Home = () => {
             className="max-sm:h-44 max-sm:w-44"
           />
         </div>
-        <div className="w-[50%] max-lg:w-[100%] flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10">
+        <div className="w-[50%] max-lg:w-[100%] flex max-md:flex-col items-center justify-between border shadow-md rounded-xl px-10 py-10 cursor-pointer hover:scale-105 transition-transform duration-200">
           <div>
             <p className="text-2xl">Find all popular brands</p>
           </div>
@@ -150,41 +150,42 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-20 justify-center items-center">
-        <div className="container mx-auto flex max-lg:w-full max-md:flex-col gap-6 max-md:gap-10 w-[62%] items-center mt-[7rem]">
-          <Image
-            src={watchImg}
-            alt="img"
-            className="w-[50%] max-md:w-full h-[25rem] max-md:h-full rounded-xl"
-          />
-          <div className="w-[50%] flex flex-col items-center justify-center gap-3">
+      <div className="flex items-center justify-center my-20 max-md:mx-6">
+        <div
+          className="relative w-[70%] max-lg:w-full h-[40rem] max-lg:h-[50rem] bg-cover bg-center flex items-center justify-start text-white rounded-3xl container mx-auto"
+          style={{ backgroundImage: `url(${watchImg.src})` }}
+        >
+          <div className="w-[50%] flex flex-col items-center justify-center gap-3 max-lg:absolute max-lg:top-10 max-lg:left-20">
             <p className="text-lg">Be Bold, Be Daring</p>
             <h2 className="text-4xl text-center max-md:text-2xl">
               A Whole New <br /> Look
             </h2>
-            <Button className="px-10 py-5 border-2 border-transparent hover:bg-transparent rounded-md text-black bg-brown tracking-widest hover:border-brown">
+            <Button className="px-10 py-5 border-2 border-transparent hover:bg-transparent rounded-md text-black bg-brown tracking-widest hover:border-brown button">
               VIEW MORE
             </Button>
           </div>
         </div>
+      </div>
+
+      <div className="flex flex-col gap-20 justify-center items-center">
         <div className="flex justify-center items-center">
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 w-fit gap-[10rem] max-lg:gap-[2rem] max-lg:w-[80%]">
-          {features.map((feature) => (
-            <div
-              key={feature.id}
-              className="flex flex-col text-center justify-center items-center gap-4"
-            >
+          <div className="grid grid-cols-2 md:grid-cols-3 w-fit gap-[10rem] max-lg:gap-[2rem] max-lg:w-[80%]">
+            {features.map((feature) => (
               <div
-                className={`p-4 rounded-full border border-brown ${
-                  feature.rotate ? '-rotate-45' : ''
-                }`}
+                key={feature.id}
+                className="flex flex-col text-center justify-center items-center gap-4"
               >
-                {feature.icon}
+                <div
+                  className={`p-4 rounded-full border border-brown ${
+                    feature.rotate ? '-rotate-45' : ''
+                  }`}
+                >
+                  {feature.icon}
+                </div>
+                <p className="text-xl max-sm:text-base">{feature.name}</p>
               </div>
-              <p className="text-xl max-sm:text-base">{feature.name}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </div>
         <div className="w-full">
           <div className="bg-[#fff7ed] py-[5rem] w-full">

@@ -45,7 +45,7 @@ const Header = () => {
   return (
     <div className="shadow-sm">
       {/* Main Header Section */}
-      <section className="container mx-auto py-6 flex items-center justify-between bg-white relative max-md:px-6 max-md:py-4">
+      <section className="container mx-auto py-4 flex items-center justify-between bg-white relative max-md:px-6 max-md:py-4">
         <Image src={logo} alt="logo" className="max-md:w-14" />
         <ul className="hidden md:flex items-center gap-5">
           {links.map((link) => (
@@ -97,7 +97,7 @@ const Header = () => {
             <div className="flex justify-between items-center mb-6">
               <Image src={logo} alt="logo" className="max-md:w-14" />
               <button
-                className="text-gray-600 hover:text-gray-900"
+                className="text-gray-600 hover:text-gray-900 button"
                 onClick={() => setIsMenuOpen(false)} // Close menu
               >
                 ✕
@@ -132,7 +132,7 @@ const Header = () => {
             <div className="flex justify-between items-center mb-4 border-b pb-5">
               <h2 className="text-lg font-bold">Your Cart</h2>
               <button
-                className="text-gray-600 hover:text-gray-900"
+                className="text-gray-600 hover:text-gray-900 button"
                 onClick={() => setIsCartOpen(false)}
               >
                 ✕
@@ -163,13 +163,13 @@ const Header = () => {
               <div className="flex gap-5 items-center">
                 <Button
                   onClick={() => router.push('/checkout')}
-                  className="bg-brown hover:bg-amber-600 rounded-md text-white tracking-widest py-8 w-full my-4"
+                  className="bg-brown hover:bg-amber-600 rounded-md text-white tracking-widest py-8 w-full my-4 button"
                 >
                   PROCEED TO CHECKOUT
                 </Button>
                 <Button
                   onClick={() => router.push('/shop')}
-                  className="bg-transparent border hover:border-transparent hover:bg-brown hover:text-white rounded-md text-brown tracking-widest py-8 w-full"
+                  className="button bg-transparent border hover:border-transparent hover:bg-brown hover:text-white rounded-md text-brown tracking-widest py-8 w-full button"
                 >
                   CONTINUE SHOPPING
                 </Button>{' '}

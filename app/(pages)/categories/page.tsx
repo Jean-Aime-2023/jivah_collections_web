@@ -26,7 +26,7 @@ const Categories = () => {
             className="p-3 border outline-none max-xl:w-full"
             placeholder="Search products..."
           />
-          <button type="submit" className="p-3 bg-brown max-xl:p-2">
+          <button type="submit" className="p-3 bg-brown max-xl:p-2 button">
             <FaAngleRight size={24} color="black" />
           </button>
         </div>
@@ -65,7 +65,7 @@ const Categories = () => {
         </div>
         
         {/* Product Grid */}
-        <div className="flex flex-wrap gap-10 max-lg:justify-center">
+        <div className="grid md:grid-cols-3 max-md:grid-cols-1 gap-7">
           {products.map((product) => (
             <Product
               key={product.id}

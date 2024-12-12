@@ -23,5 +23,10 @@ body{
 }
 
 .scroll::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
+  display: none;  
 }
+
+button:hover {
+  @apply hover:scale-105 transition-transform duration-200;
+}
+

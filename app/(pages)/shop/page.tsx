@@ -23,7 +23,7 @@ const Shop = () => {
             className="p-3 border outline-none"
             placeholder="Search products..."
           />
-          <button type="submit" className="p-3 bg-brown">
+          <button type="submit" className="p-3 bg-brown button">
             <FaAngleRight size={24} color="black" />
           </button>
         </div>

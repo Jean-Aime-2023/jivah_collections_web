@@ -33,9 +33,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       {showScrollTop && (
         <button
           onClick={handleScrollToTop}
-          className="fixed right-3 bottom-[10px]"
+          className="fixed right-3 bottom-[10px] button"
         >
-          <div className="md:w-[80px] md:h-[80px] w-[40px] h-[40px] bg-brown flex items-center justify-center rounded-full shadow-md">
+          <div className="md:w-[60px] md:h-[60px] w-[40px] h-[40px] bg-brown flex items-center justify-center rounded-full shadow-md">
             <ChevronUp className="text-white md:w-[40px] w-[25px]" />
           </div>
         </button>

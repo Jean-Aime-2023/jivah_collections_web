@@ -69,7 +69,7 @@ const ProductDetails = () => {
             </p>
             <form action="" className="flex items-center gap-3">
               <Input defaultValue={1} className="border py-2 w-20" />
-              <Button className="tracking-widest text-white bg-brown">
+              <Button className="tracking-widest text-white bg-brown button">
                 ADD TO CART
               </Button>
             </form>

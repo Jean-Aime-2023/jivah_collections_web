@@ -99,7 +99,7 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
         </div>
 
         <Button
-          className="w-full py-7 max-sm:py-5 bg-brown rounded-lg my-6 hover:bg-[#db9744]"
+          className="w-full py-7 max-sm:py-5 bg-brown rounded-lg my-6 hover:bg-[#db9744] button"
           disabled={isLoading}
           onClick={handleSubmit}
         >
@@ -128,7 +128,7 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
         {logos.map((logo) => (
           <div
             key={logo.id}
-            className="border rounded-lg py-3 flex gap-1 justify-center items-center flex-1 cursor-pointer"
+            className="border rounded-lg py-3 flex gap-1 justify-center items-center flex-1 cursor-pointer button"
           >
             {logo.id===3?<Image src={logo.img} alt="logo" width={40} height={40} />:<Image src={logo.img} alt="logo" width={20} height={20} />}
             <p className="text-xs max-sm:hidden">{logo.name}</p>

@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
-import { FaShoppingCart, FaEye, FaLink } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
+import { RiStarSFill } from 'react-icons/ri';
+import { FaCartShopping } from 'react-icons/fa6';
 
 interface ProductProps {
   id: number;
@@ -21,19 +22,6 @@ const Product: React.FC<ProductProps> = ({
   rating,
   image,
 }) => {
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <span
-        key={index}
-        className={`text-sm ${
-          index < rating ? 'text-yellow-500' : 'text-gray-300'
-        }`}
-      >
-        ★
-      </span>
-    ));
-  };
-
   const router = useRouter(); // Initialize useRouter
 
   const handleProductClick = () => {
@@ -44,39 +32,28 @@ const Product: React.FC<ProductProps> = ({
     <div
       onClick={handleProductClick}
       key={id}
-      className="group flex flex-col gap-1 items-center justify-center border rounded-lg p-5 text-lg relative cursor-pointer shadow-lg max-md:w-[90%]"
+      className="group flex flex-col gap-1 items-center justify-center border rounded-3xl text-lg relative cursor-pointer shadow-lg max-md:w-[94%] hover:scale-105 transition-transform duration-200"
     >
+      <div className="p-3 rounded-full shadow-lg border absolute right-5 top-5 bg-white">
+        <FaCartShopping size={23} color="#4a4747" />
+      </div>
       <Image
         src={image}
         alt={name}
-        className="w-60 h-52 object-cover rounded-lg"
+        className="w-60 h-52 object-cover rounded-3xl p-2"
       />
-      <div className="flex">{renderStars(rating)}</div>
-      <p className="text-center mt-2 text-gray-700">{name}</p>
-      <div className="flex items-center gap-1">
-        <p className="line-through text-gray-500">$ {crossedPrice}</p>
-        <p className="text-green-600 font-bold">$ {price}</p>
-      </div>
-      <div className="absolute w-fit bg-red-600 text-white px-3 py-1 top-6 left-0 text-xs">
-        Sale!
-      </div>
-
-      {/* Hover icons */}
-      <div className="group-hover:flex hidden items-center gap-5 absolute top-24 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
-        <div className="bg-black/75 p-3 rounded cursor-pointer">
-          <FaShoppingCart color="white" />
+      <div className="w-96 py-5 px-12 max-md:px-6 max-md:w-[100%]">
+        <p className="font-bold text-xl max-md:text-sm py-2">{name}</p>
+        <div className="w-full flex items-center justify-between">
+          <div className="flex items-center gap-1">
+            <p className="line-through text-gray-500">$ {crossedPrice}</p>
+            <p className="text-green-600 font-bold">$ {price}</p>
+          </div>
+          <div className="flex items-center gap-1">
+            <RiStarSFill size={20} fill="#eab308" />
+            {rating}
+          </div>
         </div>
-        <div className="bg-black/75 p-3 rounded cursor-pointer">
-          <FaEye color="white" />
-        </div>
-        <div className="bg-black/75 p-3 rounded cursor-pointer">
-          <FaLink color="white" />
-        </div>
-      </div>
-
-      {/* Hover icon on top-right */}
-      <div className="group-hover:flex hidden p-2 bg-white rounded-full cursor-pointer shadow-lg absolute top-5 right-5 transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
-        <FaShoppingCart />
       </div>
     </div>
   );

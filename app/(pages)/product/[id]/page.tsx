@@ -36,7 +36,7 @@ const ProductDetails = () => {
               height={500}
               className="rounded-lg border"
             />
-            <div className="flex flex-wrap max-md:grid max-md:grid-cols-2 gap-4 overflow-hidden">
+            <div className="flex flex-wrap max-lg:grid max-lg:grid-cols-2 gap-4 overflow-hidden">
               {product.otherColors?.map((color, index) => (
                 <div
                   key={index}
@@ -64,7 +64,7 @@ const ProductDetails = () => {
                 ${product.crossedPrice}
               </p>
             </div>
-            <p className="text-gray-500 line-through">
+            <p className="text-gray-500">
               Availability: <span className="text-green-500">57 in stock</span>
             </p>
             <form action="" className="flex items-center gap-3">
@@ -88,9 +88,12 @@ const ProductDetails = () => {
           <p className="text-gray-600 mt-2">{product.description}</p>
         </div>
       </div>
-      
-      
-      <ProductClass title={'Related Products'} subtitle={'New To You'} tag={'latest'} />
+
+      <ProductClass
+        title={'Related Products'}
+        subtitle={'New To You'}
+        tag={'latest'}
+      />
     </div>
   );
 };

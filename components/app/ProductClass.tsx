@@ -30,7 +30,7 @@ const ProductClass: React.FC<ProductClassProps> = ({
         {title}
       </h4>
       {/* Map through filtered products */}
-      <div className="grid md:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-6">
+      <div className="grid lg:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-6">
         {limitedProducts.map((product) => (
           <div
             onClick={() => router.push(`/product/${product.id}`)}

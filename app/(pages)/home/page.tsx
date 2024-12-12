@@ -160,7 +160,7 @@ const Home = () => {
             <h2 className="text-4xl text-center max-md:text-2xl">
               A Whole New <br /> Look
             </h2>
-            <Button className="px-10 py-5 border-2 border-transparent hover:bg-transparent rounded-md text-black bg-brown tracking-widest hover:border-brown button">
+            <Button className="px-10 py-5 border-2 border-transparent hover:bg-transparent rounded-md text-black hover:text-brown bg-brown tracking-widest hover:border-brown button">
               VIEW MORE
             </Button>
           </div>

@@ -49,7 +49,10 @@ export const products: Product[] = [
     otherColors: [
       { image: cloth1, color: "Red" },
       { image: cloth2, color: "Blue" },
-      { image: cloth3, color: "Green" }
+      { image: cloth3, color: "Green" },
+      { image: cloth1, color: "Red" },
+      { image: cloth2, color: "Blue" },
+      { image: cloth3, color: "Green" },
     ]
   },
   {
@@ -67,7 +70,10 @@ export const products: Product[] = [
     otherColors: [
       { image: cloth1, color: "Red" },
       { image: cloth2, color: "Blue" },
-      { image: cloth3, color: "Green" }
+      { image: cloth3, color: "Green" },
+      { image: cloth1, color: "Red" },
+      { image: cloth2, color: "Blue" },
+      { image: cloth3, color: "Green" },
     ]  },
   {
     id: 3,
@@ -84,7 +90,9 @@ export const products: Product[] = [
     otherColors: [
       { image: cloth1, color: "Red" },
       { image: cloth2, color: "Blue" },
-      { image: cloth3, color: "Green" }
+      { image: cloth3, color: "Green" },
+      { image: cloth2, color: "Blue" },
+      { image: cloth3, color: "Green" },
     ]  },
   {
     id: 4,
@@ -101,7 +109,10 @@ export const products: Product[] = [
     otherColors: [
       { image: cloth1, color: "Red" },
       { image: cloth2, color: "Blue" },
-      { image: cloth3, color: "Green" }
+      { image: cloth3, color: "Green" },
+      { image: cloth1, color: "Red" },
+      { image: cloth2, color: "Blue" },
+      { image: cloth3, color: "Green" },
     ]  },
   {
     id: 5,
@@ -118,7 +129,10 @@ export const products: Product[] = [
     otherColors: [
       { image: cloth1, color: "Red" },
       { image: cloth2, color: "Blue" },
-      { image: cloth3, color: "Green" }
+      { image: cloth3, color: "Green" },
+      { image: cloth1, color: "Red" },
+      { image: cloth2, color: "Blue" },
+      { image: cloth3, color: "Green" },
     ]  },
   {
     id: 6,
@@ -135,7 +149,10 @@ export const products: Product[] = [
     otherColors: [
       { image: cloth1, color: "Red" },
       { image: cloth2, color: "Blue" },
-      { image: cloth3, color: "Green" }
+      { image: cloth3, color: "Green" },
+      { image: cloth1, color: "Red" },
+      { image: cloth2, color: "Blue" },
+      { image: cloth3, color: "Green" },
     ]  },
   {
     id: 7,
@@ -152,7 +169,10 @@ export const products: Product[] = [
     otherColors: [
       { image: cloth1, color: "Red" },
       { image: cloth2, color: "Blue" },
-      { image: cloth3, color: "Green" }
+      { image: cloth3, color: "Green" },
+      { image: cloth1, color: "Red" },
+      { image: cloth2, color: "Blue" },
+      { image: cloth3, color: "Green" },
     ]  },
   {
     id: 8,
@@ -169,7 +189,10 @@ export const products: Product[] = [
     otherColors: [
       { image: cloth1, color: "Red" },
       { image: cloth2, color: "Blue" },
-      { image: cloth3, color: "Green" }
+      { image: cloth3, color: "Green" },
+      { image: cloth1, color: "Red" },
+      { image: cloth2, color: "Blue" },
+      { image: cloth3, color: "Green" },
     ]  },
 
   // Add more products similarly...

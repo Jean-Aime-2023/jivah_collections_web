@@ -96,7 +96,7 @@ const Home = () => {
       {adContent.map((ad) => (
         <div
           key={ad.id}
-          className="bg-gray-100 rounded-3xl py-10 flex items-center justify-center gap-[10rem] mx-20 max-md:flex-col max-md:mx-6 max-md:gap-[5rem] container mx-auto"
+          className="bg-gray-100 rounded-3xl py-10 flex items-center justify-center gap-[10rem] mx-20 max-md:flex-col max-md:mx-6 max-md:gap-[5rem]"
         >
           <div className="flex flex-col gap-5">
             <h3 className="text-3xl font-medium">{ad.name}</h3>
@@ -203,7 +203,7 @@ const Home = () => {
           </div>
           <div className="bg-[#f1f5f9] py-[3rem] flex flex-col items-center justify-center text-center gap-5 text-xl max-md:text-lg">
             <p className="text-brown">Testimonials</p>
-            <h3 className="text-4xl max-sm:text-3xl">Our Happy Clients</h3>
+            <h3 className="text-4xl max-sm:text-3xl max-md:text-xl">Our Happy Clients</h3>
             <p className="text-gray-500">
               &quot;Jivah Collections are the best, nothing you can&apos;t find
               there.&quot;

@@ -25,36 +25,17 @@ const ProductDetails = () => {
   }
 
   return (
-    <div className="container mx-auto py-[5rem] max-md:px-7">
+    <div className="container mx-auto py-[5rem] max-md:px-4">
       <div className="flex flex-col gap-9 mb-20">
-        <div className="flex gap-8 max-md:flex-col">
-          <div className="flex flex-1 flex-col gap-4">
+        <div className="flex gap-8 max-lg:flex-col">
+          <div className="flex w-[40%] max-lg:w-full flex-col gap-4">
             <Image
               src={selectedImage || product.image}
               alt={product.name}
-              width={500}
-              height={500}
-              className="rounded-lg border"
+              className="rounded-lg border h-full w-full"
             />
-            <div className="flex flex-wrap max-lg:grid max-lg:grid-cols-2 gap-4 overflow-hidden">
-              {product.otherColors?.map((color, index) => (
-                <div
-                  key={index}
-                  className="cursor-pointer p-1 border rounded"
-                  onClick={() => setSelectedImage(color.image)}
-                >
-                  <Image
-                    src={color.image}
-                    alt={color.color}
-                    width={200}
-                    height={50}
-                    className="rounded"
-                  />
-                </div>
-              ))}
-            </div>
           </div>
-          <div className="flex flex-1 flex-col gap-3">
+          <div className="flex w-[60%] max-lg:w-full flex-col gap-3">
             <h1 className="text-2xl font-bold">{product.name}</h1>
             <div className="flex items-center gap-4">
               <p className="text-green-600 font-bold text-lg">
@@ -73,7 +54,7 @@ const ProductDetails = () => {
                 ADD TO CART
               </Button>
             </form>
-            <hr className="border border-gray-500 w-full" />
+            <hr className="border border-gray-300 w-[70%] my-3" />
             <p>SKU: 011120241866</p>
             <p>
               Categories:{' '}
@@ -81,6 +62,23 @@ const ProductDetails = () => {
                 BOTH, GENERAL, JACKET, LATEST, MEN, Uncategorized, WOMEN
               </span>
             </p>
+            <div className="flex flex-wrap grid-cols-4 max-lg:grid-cols-4 max-md:grid-cols-3 gap-4 overflow-hidden">
+              {product.otherColors?.map((color, index) => (
+                <div
+                  key={index}
+                  className="cursor-pointer p-1 border rounded"
+                  onClick={() => setSelectedImage(color.image)}
+                >
+                  <Image
+                    src={color.image}
+                    alt={color.color}
+                    width={130}
+                    height={50}
+                    className="rounded"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div>

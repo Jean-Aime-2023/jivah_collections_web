@@ -45,7 +45,7 @@ export function XChart() {
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer  config={chartConfig}>
           <LineChart
             data={chartData}
             margin={{

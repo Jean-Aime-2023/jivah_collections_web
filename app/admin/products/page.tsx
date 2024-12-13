@@ -1,9 +1,13 @@
-import React from 'react'
+import { DataTableProducts } from '@/components/app/DataTableProducts';
+import React from 'react';
 
 const Products = () => {
   return (
-    <div>Products</div>
-  )
-}
+    <div className="bg-white p-4 border shadow rounded-xl">
+      <p className="font-semibold text-lg">All Products</p>
+      <DataTableProducts />
+    </div>
+  );
+};
 
-export default Products
+export default Products;

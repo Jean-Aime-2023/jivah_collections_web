@@ -7,11 +7,8 @@ import {
   RadialBar,
   RadialBarChart,
 } from 'recharts';
+import { ChartConfig, ChartContainer } from '@/components/ui/SmallCharts';
 
-import {
-  CardContent
-} from '@/components/ui/card';
-import { ChartConfig, ChartContainer } from '@/components/ui/chart';
 const chartData = [
   { browser: 'safari', visitors: 200, fill: 'var(--color-safari)' },
 ];
@@ -28,26 +25,28 @@ const chartConfig = {
 
 export function SimpleChart() {
   return (
-    <CardContent>
       <ChartContainer
         config={chartConfig}
-        className="mx-auto aspect-square max-h-[250px]"
+        className="mx-auto aspect-square max-h-[150px]" 
       >
         <RadialBarChart
           data={chartData}
           startAngle={0}
           endAngle={250}
-          innerRadius={80}
-          outerRadius={110}
+          innerRadius={60} // Reduced inner radius
+          outerRadius={80} // Reduced outer radius
         >
           <PolarGrid
             gridType="circle"
             radialLines={false}
             stroke="none"
-            className="first:fill-[#f5e5c9] last:fill-white"
-            polarRadius={[86, 74]}
+            polarRadius={[66, 54]} // Adjusted for smaller size
           />
-          <RadialBar dataKey="visitors" background cornerRadius={10} />
+          <RadialBar
+            dataKey="visitors"
+            background
+            cornerRadius={8} // Reduced corner radius
+          />
           <PolarRadiusAxis tick={false} tickLine={false} axisLine={false}>
             <Label
               content={({ viewBox }) => {
@@ -62,14 +61,14 @@ export function SimpleChart() {
                       <tspan
                         x={viewBox.cx}
                         y={viewBox.cy}
-                        className="fill-brown text-4xl font-bold"
+                        className="fill-brown text-3xl font-medium" // Smaller font size
                       >
                         {chartData[0].visitors.toLocaleString()}
                       </tspan>
                       <tspan
                         x={viewBox.cx}
-                        y={(viewBox.cy || 0) + 24}
-                        className="fill-brown"
+                        y={(viewBox.cy || 0) + 18} // Adjusted vertical position
+                        className="fill-brown text-xs py-1" // Smaller font size
                       >
                         Visitors
                       </tspan>
@@ -81,6 +80,5 @@ export function SimpleChart() {
           </PolarRadiusAxis>
         </RadialBarChart>
       </ChartContainer>
-    </CardContent>
   );
 }

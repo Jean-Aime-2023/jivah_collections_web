@@ -36,7 +36,7 @@ const Heading = () => {
       : 'text-muted-foreground hover:bg-[#ad650c] hover:text-white hover:transition-colors duration-200';
 
   return (
-    <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[70px] lg:px-6">
+    <header className="flex h-16 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[70px] lg:px-6">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="outline" size="icon" className="shrink-0 md:hidden">

@@ -14,7 +14,6 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from 'lucide-react';
-
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import {
@@ -35,6 +34,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import Image from 'next/image';
 
 const data: Payment[] = [
   {
@@ -42,54 +42,63 @@ const data: Payment[] = [
     amount: 316,
     status: 'success',
     email: 'ken99@yahoo.com',
+    name:'Kenny'
   },
   {
     id: '3u1reuv4',
     amount: 242,
     status: 'success',
     email: 'Abe45@gmail.com',
+    name:'Abe'
   },
   {
     id: 'derv1ws0',
     amount: 837,
     status: 'processing',
     email: 'Monserrat44@gmail.com',
+    name:'Monserrat'
   },
   {
     id: '5kma53ae',
     amount: 874,
     status: 'success',
     email: 'Silas22@gmail.com',
+    name:'Silas'
   },
   {
     id: 'bhqecj4p',
     amount: 721,
     status: 'failed',
     email: 'carmella@hotmail.com',
+    name:'Carmella'
   },
   {
     id: 'bhqecj4pe',
     amount: 721,
     status: 'failed',
     email: 'carmella@hotmail.com',
+    name:'Tonny'
   },
   {
     id: 'bhqecj4ps',
     amount: 721,
     status: 'failed',
     email: 'carmella@hotmail.com',
+    name:'Carmella'
   },
   {
     id: 'g5gr84i9',
     amount: 316,
     status: 'success',
     email: 'ken99@yahoo.com',
+    name:'Ken'
   },
   {
     id: '5u1reuv4',
     amount: 242,
     status: 'success',
     email: 'Abe45@gmail.com',
+    name:'Abe'
   },
 ];
 
@@ -98,6 +107,7 @@ export type Payment = {
   amount: number;
   status: 'pending' | 'processing' | 'success' | 'failed';
   email: string;
+  name:string
 };
 
 export const columns: ColumnDef<Payment>[] = [
@@ -124,10 +134,22 @@ export const columns: ColumnDef<Payment>[] = [
     enableHiding: false,
   },
   {
+    accessorKey: 'name',
+    header: 'Name',
+    cell: ({ row }) => (
+      <div className="capitalize flex items-center gap-2">
+        <Image src={'https://github.com/shadcn.png'} alt='img' width={20} height={20} className='rounded-full' />
+        {row.getValue('name')}
+      </div>
+    ),
+  },
+  {
     accessorKey: 'status',
     header: 'Status',
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue('status')}</div>
+      <div className="capitalize">
+        {row.getValue('status')}
+      </div>
     ),
   },
   {

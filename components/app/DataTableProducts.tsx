@@ -35,6 +35,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import Image from 'next/image';
 
 const data: Payment[] = [
   {
@@ -42,54 +43,63 @@ const data: Payment[] = [
     amount: 316,
     status: 'success',
     email: 'ken99@yahoo.com',
+    product:'T-Shirt'
   },
   {
     id: '3u1reuv4',
     amount: 242,
     status: 'success',
     email: 'Abe45@gmail.com',
+    product:'Lacoste'
   },
   {
     id: 'derv1ws0',
     amount: 837,
     status: 'processing',
     email: 'Monserrat44@gmail.com',
+    product:'Pants'
   },
   {
     id: '5kma53ae',
     amount: 874,
     status: 'success',
     email: 'Silas22@gmail.com',
+    product:'Jumper'
   },
   {
     id: 'bhqecj4p',
     amount: 721,
     status: 'failed',
     email: 'carmella@hotmail.com',
+    product:'T-Shirt'
   },
   {
     id: 'bhqecj4pe',
     amount: 721,
     status: 'failed',
     email: 'carmella@hotmail.com',
+    product:'Shirt'
   },
   {
     id: 'bhqecj4ps',
     amount: 721,
     status: 'failed',
     email: 'carmella@hotmail.com',
+    product:'Pant'
   },
   {
     id: 'g5gr84i9',
     amount: 316,
     status: 'success',
     email: 'ken99@yahoo.com',
+    product:'T-Shirt'
   },
   {
     id: '5u1reuv4',
     amount: 242,
     status: 'success',
     email: 'Abe45@gmail.com',
+    product:'T-Shirt'
   },
 ];
 
@@ -98,6 +108,7 @@ export type Payment = {
   amount: number;
   status: 'pending' | 'processing' | 'success' | 'failed';
   email: string;
+  product:string
 };
 
 export const columns: ColumnDef<Payment>[] = [
@@ -123,6 +134,16 @@ export const columns: ColumnDef<Payment>[] = [
     enableSorting: false,
     enableHiding: false,
   },
+  {
+      accessorKey: 'product',
+      header: 'Product',
+      cell: ({ row }) => (
+        <div className="capitalize flex items-center gap-2">
+          <Image src={'https://media.glamour.com/photos/6050e89f4d8c1292c9be5d33/1:1/pass/River.jpg'} alt='img' width={20} height={20} className='rounded-full' />
+          {row.getValue('product')}
+        </div>
+      ),
+    },
   {
     accessorKey: 'status',
     header: 'Status',
@@ -220,8 +241,7 @@ export function DataTableProducts() {
   });
 
   return (
-    <div className="w-full px-1">
-      {/* {products.map((product) => ( */}
+    <div className="w-full">
         <div className="flex items-center py-4">
           <Input
             placeholder="Filter emails..."

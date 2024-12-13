@@ -1,8 +1,8 @@
-"use client"
+'use client';
 
-import * as React from "react"
-import { TrendingUp } from "lucide-react"
-import { Label, Pie, PieChart } from "recharts"
+import * as React from 'react';
+import { TrendingUp } from 'lucide-react';
+import { Label, Pie, PieChart } from 'recharts';
 
 import {
   Card,
@@ -11,56 +11,56 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from '@/components/ui/card';
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from '@/components/ui/chart';
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "#ea580c" },
-  { browser: "safari", visitors: 200, fill: "#f97316" },
-  { browser: "firefox", visitors: 287, fill: "#fb923c" },
-  { browser: "edge", visitors: 173, fill: "#fdba74" },
-  { browser: "other", visitors: 190, fill: "#fed7aa" },
-]
+  { browser: 'chrome', visitors: 275, fill: '#ea580c' },
+  { browser: 'safari', visitors: 200, fill: '#f97316' },
+  { browser: 'firefox', visitors: 287, fill: '#fb923c' },
+  { browser: 'edge', visitors: 173, fill: '#fdba74' },
+  { browser: 'other', visitors: 190, fill: '#fed7aa' },
+];
 
 const chartConfig = {
   visitors: {
-    label: "Visitors",
+    label: 'Visitors',
   },
   chrome: {
-    label: "Users",
-    color: "hsl(var(--chart-1))",
+    label: 'Users',
+    color: 'hsl(var(--chart-1))',
   },
   safari: {
-    label: "Purchases",
-    color: "hsl(var(--chart-2))",
+    label: 'Purchases',
+    color: 'hsl(var(--chart-2))',
   },
   firefox: {
-    label: "Products",
-    color: "hsl(var(--chart-3))",
+    label: 'Products',
+    color: 'hsl(var(--chart-3))',
   },
   edge: {
-    label: "Orders",
-    color: "hsl(var(--chart-4))",
+    label: 'Orders',
+    color: 'hsl(var(--chart-4))',
   },
   other: {
-    label: "Sales",
-    color: "hsl(var(--chart-5))",
+    label: 'Sales',
+    color: 'hsl(var(--chart-5))',
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function Donut() {
   const totalVisitors = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
-  }, [])
+    return chartData.reduce((acc, curr) => acc + curr.visitors, 0);
+  }, []);
 
   return (
     <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Jicva Collections</CardTitle>
+        <CardTitle>Pie Chart - Jiva Collections</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
@@ -82,7 +82,7 @@ export function Donut() {
             >
               <Label
                 content={({ viewBox }) => {
-                  if (viewBox && "cx" in viewBox && "cy" in viewBox) {
+                  if (viewBox && 'cx' in viewBox && 'cy' in viewBox) {
                     return (
                       <text
                         x={viewBox.cx}
@@ -105,7 +105,7 @@ export function Donut() {
                           Visitors
                         </tspan>
                       </text>
-                    )
+                    );
                   }
                 }}
               />
@@ -122,5 +122,5 @@ export function Donut() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }

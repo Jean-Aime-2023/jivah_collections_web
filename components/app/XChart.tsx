@@ -41,11 +41,11 @@ export function XChart() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Line Chart - Custom Dots</CardTitle>
+        <CardTitle>Line Chart - Jiva Collections</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer  config={chartConfig}>
+        <ChartContainer config={chartConfig}>
           <LineChart
             data={chartData}
             margin={{

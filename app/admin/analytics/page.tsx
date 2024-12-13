@@ -52,9 +52,9 @@ const data = [
 
 const Analytics = () => {
   return (
-    <div className="flex sm text- flex-col gap-7">
+    <div className="flex sm text- flex-col gap-7 mb-2 mt-1">
       <div className="grid grid-cols-3 gap-7">
-        <div className="grid grid-cols-2 col-span-2 gap-7">
+        <div className="grid grid-cols-2 col-span-2 gap-7 max-lg:col-span-3 max-md:grid-cols-1">
           {data.map((data) => (
             <div
               className={`flex items-center justify-between border shadow p-6 h-[10rem] rounded-xl ${
@@ -78,7 +78,7 @@ const Analytics = () => {
             </div>
           ))}
         </div>
-        <div>
+        <div className='max-lg:col-span-3'>
           <Donut />
         </div>
       </div>

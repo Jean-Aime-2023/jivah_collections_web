@@ -41,7 +41,7 @@ const data = [
 
 const Dashboard = () => {
   return (
-    <div className="flex sm text- flex-col gap-7">
+    <div className="flex sm text- flex-col gap-7 mb-2 mt-1">
       <div className="grid grid-cols-3 gap-6 max-lg:grid-cols-2 max-md:grid-cols-1">
         {data.map((data) => (
           <div

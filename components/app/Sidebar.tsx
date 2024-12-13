@@ -1,135 +1,86 @@
-"use client";
-
-import React from "react";
-import logo from "@/public/assets/logo.png";
-import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
-import { FaChartPie } from "react-icons/fa";
-import { FaUserFriends } from "react-icons/fa";
-import { AiFillProduct } from "react-icons/ai";
-import { IoMdAnalytics } from "react-icons/io";
-import { IoSettingsSharp } from "react-icons/io5";
-import { TbLogout } from "react-icons/tb";
-
-const adminLinks = [
-  {
-    id: 1,
-    name: "Dashboard",
-    link: "/admin/dashboard",
-    icon: <FaChartPie size={24} className="group-hover:text-brown" />,
-  },
-  {
-    id: 2,
-    name: "Users",
-    link: "/admin/user",
-    icon: <FaUserFriends size={24} className="group-hover:text-brown" />,
-  },
-  {
-    id: 3,
-    name: "Products",
-    link: "/admin/products",
-    icon: <AiFillProduct size={24} className="group-hover:text-brown" />,
-  },
-  {
-    id: 4,
-    name: "Analytics",
-    link: "/admin/analytics",
-    icon: <IoMdAnalytics size={24} className="group-hover:text-brown" />,
-  },
-];
-
-const bottomLinks = [
-  {
-    id: 5,
-    name: "Settings",
-    link: "/admin/settings",
-    icon: <IoSettingsSharp size={24} className="group-hover:text-brown" />,
-  },
-  {
-    id: 6,
-    name: "Logout",
-    link: "/sign-in",
-    icon: <TbLogout size={24} className="group-hover:text-brown" />,
-  },
-];
+'use client';
+import Link from 'next/link';
+import {
+  LayoutDashboard,
+  LineChart,
+  LogOut,
+  Package,
+  Settings,
+  UserRound,
+  ListOrderedIcon
+} from 'lucide-react';
+import logo from '@/public/assets/logo.png';
+import Image from 'next/image';
 
 const Sidebar = () => {
-  const pathname = usePathname(); // Get the current path
-  const router = useRouter(); // For navigation
-
   return (
-    <div className="w-[20%] sticky max-lg:w-[15%] bg-brown left-0 top-0 p-10 flex flex-col justify-between max-lg:p-2 h-screen">
-      {/* Top Section */}
-      <div>
-        {/* Logo Section */}
-        <div className="flex items-center gap-3 mb-8">
-          <Image
-            src={logo}
-            alt="logo"
-            className="max-lg:w-14 max-lg:h-14 max-sm:w-10 max-sm:h-10 w-20 h-20"
-          />
-          <h4 className="text-xl text-black font-medium max-lg:hidden max-xl:text-lg">
-            JIVAH COLLECTIONS
-          </h4>
+    <div className="hidden border-r bg-muted/40 md:block text-white">
+      <div className="flex h-full max-h-screen flex-col gap-7 bg-brown p-7 px-5">
+        <div className="flex h-14 items-center px-4 lg:h-[60px] lg:px-4">
+          <Link href="/" className="flex items-center gap-2 font-semibold">
+            <Image src={logo} alt="logo" className="h-12 w-12" />
+            <span className="font-bold text-black text-xl rowdies-light">
+              JIVAH
+            </span>
+          </Link>
         </div>
-
-        {/* Navigation Links */}
-        <ul className="flex flex-col gap-3">
-          {adminLinks.map((link) => (
-            <li
-              key={link.id}
-              className={`flex group items-center gap-4 px-4 py-4 rounded-lg cursor-pointer transition-all duration-300 ${
-                pathname === link.link
-                  ? "bg-white text-brown"
-                  : pathname.startsWith(link.link) 
-                  ? "bg-white text-brown"
-                  : "text-white hover:bg-white hover:text-brown"
-              }`}
-              onClick={() => router.push(link.link)}
+        <div className="flex-1">
+          <nav className="grid gap-3 items-start px-2 text-sm font-medium lg:px-4">
+            <Link
+              href="#"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
             >
-              <span
-                className={`transition-colors duration-300 ${
-                  pathname === link.link || pathname.startsWith(link.link)
-                    ? "text-brown"
-                    : "text-white"
-                }`}
-              >
-                {link.icon}
-              </span>
-              <span className="text-lg font-medium max-lg:text-sm max-lg:hidden">
-                {link.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Bottom Section */}
-      <div>
-        <ul className="flex flex-col gap-3">
-          {bottomLinks.map((link) => (
-            <li
-              key={link.id}
-              className={`flex group items-center gap-4 px-4 py-4 rounded-lg cursor-pointer transition-all duration-300 ${
-                pathname === link.link
-                  ? "bg-white text-brown"
-                  : "text-white hover:bg-white hover:text-brown"
-              }`}
-              onClick={() => router.push(link.link)}
+              <LayoutDashboard className="h-4 w-4" />
+              Dashboard
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
             >
-              <span
-                className={`transition-colors duration-300 ${
-                  pathname === link.link ? "text-brown" : "text-white"
-                }`}
-              >
-                {link.icon}
-              </span>
-              <span className="text-lg font-medium max-lg:text-sm max-lg:hidden">
-                {link.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+              <UserRound className="h-4 w-4" />
+              Users
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
+            >
+              <Package className="h-4 w-4" />
+              Products{' '}
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
+            >
+              <ListOrderedIcon className="h-4 w-4" />
+              Orders{' '}
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+            >
+              <LineChart className="h-4 w-4" />
+              Analytics
+            </Link>
+          </nav>
+        </div>
+        <div className="mt-auto">
+          <nav className="grid gap-3 items-start px-2 text-sm font-medium lg:px-4">
+            <Link
+              href="#"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+            >
+              <Settings className="h-4 w-4" />
+              Settings
+            </Link>
+            <Link
+              href="#"
+              className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+            >
+              <LogOut className="h-4 w-4" />
+              Logout
+            </Link>
+          </nav>
+        </div>
       </div>
     </div>
   );

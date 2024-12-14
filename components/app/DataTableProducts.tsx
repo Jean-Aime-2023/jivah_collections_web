@@ -139,7 +139,7 @@ export const columns: ColumnDef<Payment>[] = [
       header: 'Product',
       cell: ({ row }) => (
         <div className="capitalize flex items-center gap-2">
-          <Image src={'https://media.glamour.com/photos/6050e89f4d8c1292c9be5d33/1:1/pass/River.jpg'} alt='img' width={20} height={20} className='rounded-full' />
+          <Image src={'https://media.glamour.com/photos/6050e89f4d8c1292c9be5d33/1:1/pass/River.jpg'} alt='img' width={25} height={25} className='rounded-lg' />
           {row.getValue('product')}
         </div>
       ),

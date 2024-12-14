@@ -94,7 +94,7 @@ const AuthForm = ({ isSignIn }: { isSignIn: boolean }) => {
             />
           )}
           {isSignIn && (
-            <p className="text-right cursor-pointer">Forgot Password?</p>
+            <Link href={'/resetpassword'} className="text-right cursor-pointer">Forgot Password?</Link>
           )}
         </div>
 

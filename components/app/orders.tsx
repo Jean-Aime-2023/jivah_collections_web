@@ -15,6 +15,58 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
+// Define an array with order data
+const orders = [
+  {
+    customer: "Liam Johnson",
+    email: "liam@example.com",
+    type: "Sale",
+    status: "Fulfilled",
+    date: "2023-06-23",
+    amount: "$250.00",
+  },
+  {
+    customer: "Olivia Smith",
+    email: "olivia@example.com",
+    type: "Refund",
+    status: "Declined",
+    date: "2023-06-24",
+    amount: "$150.00",
+  },
+  {
+    customer: "Noah Williams",
+    email: "noah@example.com",
+    type: "Subscription",
+    status: "Fulfilled",
+    date: "2023-06-25",
+    amount: "$350.00",
+  },
+  {
+    customer: "Emma Brown",
+    email: "emma@example.com",
+    type: "Sale",
+    status: "Fulfilled",
+    date: "2023-06-26",
+    amount: "$450.00",
+  },
+  {
+    customer: "Liam Johnson",
+    email: "liam@example.com",
+    type: "Sale",
+    status: "Fulfilled",
+    date: "2023-06-23",
+    amount: "$250.00",
+  },
+  {
+    customer: "Olivia Smith",
+    email: "olivia@example.com",
+    type: "Refund",
+    status: "Declined",
+    date: "2023-06-24",
+    amount: "$150.00",
+  },
+];
+
 export default function OrdersComponent() {
   return (
     <Card>
@@ -34,136 +86,31 @@ export default function OrdersComponent() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow className="bg-accent">
-              <TableCell>
-                <div className="font-medium">Liam Johnson</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  liam@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Sale</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="secondary">
-                  Fulfilled
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-23</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Olivia Smith</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  olivia@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Refund</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="outline">
-                  Declined
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-24</TableCell>
-              <TableCell className="text-right">$150.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Noah Williams</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  noah@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">
-                Subscription
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="secondary">
-                  Fulfilled
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-25</TableCell>
-              <TableCell className="text-right">$350.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Emma Brown</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  emma@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Sale</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="secondary">
-                  Fulfilled
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-26</TableCell>
-              <TableCell className="text-right">$450.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Liam Johnson</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  liam@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Sale</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="secondary">
-                  Fulfilled
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-23</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Liam Johnson</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  liam@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Sale</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="secondary">
-                  Fulfilled
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-23</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Olivia Smith</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  olivia@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Refund</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="outline">
-                  Declined
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-24</TableCell>
-              <TableCell className="text-right">$150.00</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <div className="font-medium">Emma Brown</div>
-                <div className="hidden text-sm text-muted-foreground md:inline">
-                  emma@example.com
-                </div>
-              </TableCell>
-              <TableCell className="hidden sm:table-cell">Sale</TableCell>
-              <TableCell className="hidden sm:table-cell">
-                <Badge className="text-xs" variant="secondary">
-                  Fulfilled
-                </Badge>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">2023-06-26</TableCell>
-              <TableCell className="text-right">$450.00</TableCell>
-            </TableRow>
+            {orders.map((order, index) => (
+              <TableRow key={index}>
+                <TableCell>
+                  <div className="font-medium">{order.customer}</div>
+                  <div className="hidden text-sm text-muted-foreground md:inline">
+                    {order.email}
+                  </div>
+                </TableCell>
+                <TableCell className="hidden sm:table-cell">{order.type}</TableCell>
+                <TableCell className="hidden sm:table-cell">
+                <Badge
+                    className="text-xs"
+                    variant={order.status === "Fulfilled" ? "secondary" : "outline"}
+                    style={{
+                      backgroundColor: order.status === "Fulfilled" ? "#cafad7" : "#f7bdb0",
+                      color: order.status === "Fulfilled" ? "#17bf45" : "#f0411a",
+                    }}
+                  >
+                    {order.status}
+                  </Badge>
+                </TableCell>
+                <TableCell className="hidden md:table-cell">{order.date}</TableCell>
+                <TableCell className="text-right">{order.amount}</TableCell>
+              </TableRow>
+            ))}
           </TableBody>
         </Table>
       </CardContent>

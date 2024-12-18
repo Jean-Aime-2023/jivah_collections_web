@@ -9,17 +9,19 @@ interface ProductClassProps {
   title: string;
   subtitle: string;
   tag: string; // Use this to dynamically filter products
+  limit?: number;
 }
 
 const ProductClass: React.FC<ProductClassProps> = ({
   title,
   subtitle,
   tag,
+  limit = 3,
 }) => {
   const router = useRouter();
   // Dynamically filter products based on the provided tag
   const filteredProducts = products.filter((product) => product.tag === tag);
-  const limitedProducts = filteredProducts.slice(0, 3);
+  const limitedProducts = filteredProducts.slice(0, limit);
 
   return (
     <div className="flex flex-col gap-6 text-base">

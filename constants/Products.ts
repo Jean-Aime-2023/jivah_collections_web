@@ -19,6 +19,7 @@ export interface Product {
   description: string;
   otherColors?: ColorOption[];
   relatedProducts: string[];
+  stock:number;
 }
 
 import img1 from '@/public/assets/jaquemus.jpg';
@@ -36,6 +37,7 @@ import img8 from '@/public/assets/vest_o.jpg';
 export const products: Product[] = [
   {
     id: 1,
+    stock:129,
     name: 'JAQUEMUS',
     price: 59.99,
     crossedPrice: 75.99,
@@ -58,6 +60,7 @@ export const products: Product[] = [
   {
     id: 2,
     name: 'JC COMPLETE',
+    stock:129,
     price: 39.99,
     crossedPrice: 75.99,
     rating: 3,
@@ -80,6 +83,7 @@ export const products: Product[] = [
     name: 'LACOSTE T-SHIRT',
     price: 19.99,
     crossedPrice: 75.99,
+    stock:129,
     rating: 3,
     image: img3,
     tag: 'bestselling',
@@ -99,6 +103,7 @@ export const products: Product[] = [
     name: 'SMALL BAG',
     price: 129.99,
     crossedPrice: 75.99,
+    stock:129,
     rating: 3,
     image: img4,
     tag: 'bestselling',
@@ -119,6 +124,7 @@ export const products: Product[] = [
     name: 'HOODI O',
     price: 129.99,
     crossedPrice: 75.99,
+    stock:129,
     rating: 3,
     image: img5,
     tag: 'latest',
@@ -139,6 +145,7 @@ export const products: Product[] = [
     name: 'JACKET O',
     price: 129.99,
     crossedPrice: 75.99,
+    stock:129,
     rating: 3,
     image: img6,
     tag: 'latest',
@@ -159,6 +166,7 @@ export const products: Product[] = [
     name: 'T-SHIRT',
     price: 129.99,
     crossedPrice: 75.99,
+    stock:129,
     rating: 3,
     image: img7,
     tag: 'latest',
@@ -179,6 +187,7 @@ export const products: Product[] = [
     name: 'VEST O',
     price: 129.99,
     crossedPrice: 75.99,
+    stock:129,
     rating: 3,
     image: img8,
     tag: 'latest',

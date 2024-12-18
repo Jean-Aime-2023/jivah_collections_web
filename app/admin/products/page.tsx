@@ -1,6 +1,8 @@
-"use client"
-import { DataTableProducts } from '@/components/app/DataTableProducts';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+'use client';
+import DataTableProducts from '@/components/app/DataTableProducts';
 import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
